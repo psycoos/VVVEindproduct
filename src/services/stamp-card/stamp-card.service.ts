@@ -14,7 +14,7 @@ export class StampCardService {
     }
 
     getStampCard() {
-        return this.stampCardRef;
+        console.log(this.stampCardRef);
     }
 
     addStamp(stampCard: StampCard) {
