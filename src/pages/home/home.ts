@@ -31,11 +31,11 @@ export class HomePage {
   }
 
   ionViewDidLoad(){
-    this.stampCardService.getStampCard();
+    console.log(this.stampCardService.getStampCard());
   }
 
   addStamp() {
-
+    this.stampCardService.addStamp(this.stampCard)
   }
 
 }
