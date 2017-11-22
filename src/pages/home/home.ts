@@ -9,20 +9,24 @@ import { StampCard } from '../../models/stamp-card/stamp-card.model';
 export class HomePage {
 
   stampCard: StampCard = {
-    Leeuwarden: false,
-    Sneek: false,
-    Ijlst: false,
-    Sloten: false,
-    Stavoren: false,
-    Hindeloopen: false,
-    Workum: false,
-    Bolsward: false,
-    Harlingen: false,
-    Franeker: false,
-    Dokkum: false
+    "Leeuwarden": false,
+    "Sneek": false,
+    "Ijlst": false,
+    "Sloten": false,
+    "Stavoren": false,
+    "Hindeloopen": false,
+    "Workum": false,
+    "Bolsward": false,
+    "Harlingen": false,
+    "Franeker": false,
+    "Dokkum": false
   }
 
   constructor(public navCtrl: NavController) {
+
+  }
+
+  addStamp() {
 
   }
 

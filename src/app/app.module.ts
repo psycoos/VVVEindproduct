@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { QrCodeProvider } from '../providers/qr-code/qr-code';
+import { StampCardService } from '../services/stamp-card/stamp-card.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { QrCodeProvider } from '../providers/qr-code/qr-code';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    QrCodeProvider
+    QrCodeProvider,
+    StampCardService
   ]
 })
 export class AppModule {}
