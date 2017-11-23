@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from "angularfire2/auth";
+import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -35,7 +36,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QrCodeProvider,
-    StampCardService
+    StampCardService,
+    UniqueDeviceID
   ]
 })
 export class AppModule {}

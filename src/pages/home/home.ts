@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { StampCard } from '../../models/stamp-card/stamp-card.model';
 import { StampCardService } from '../../services/stamp-card/stamp-card.service'
+import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
 @Component({
   selector: 'page-home',
@@ -9,7 +10,7 @@ import { StampCardService } from '../../services/stamp-card/stamp-card.service'
 })
 export class HomePage {
 
-  stampCard: StampCard = {
+stampCard: StampCard = {
     "Leeuwarden": false,
     "Sneek": false,
     "Ijlst": false,
@@ -25,17 +26,26 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
-    public stampCardService: StampCardService
+    public stampCardService: StampCardService,
+    private uniqueDeviceID: UniqueDeviceID
   ) {
 
   }
 
-  ionViewDidLoad(){
-    console.log(this.stampCardService.getStampCard());
+  
+
+  ionViewDidLoad() {
+    this.uniqueDeviceID.get()
+  .then((uuid: any) => console.log(uuid))
+  .catch((error: any) => console.log(error));
   }
 
-  addStamp() {
+  addStamp(){
     this.stampCardService.addStamp(this.stampCard)
   }
 
 }
+function newFunction() {
+  return this;
+}
+
