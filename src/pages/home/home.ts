@@ -56,7 +56,8 @@ stampCard: Array<City>= [
   }
 
   addStamp(){
-    this.stampCardService.addStamp(this.stampCard)
+    this.stampCardService.addStamps(this.stampCard);
+    this.stampCardService.getStampCard()
   }
 
 }
