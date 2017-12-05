@@ -6,22 +6,20 @@
 <ion-content padding>
   <ion-grid>
     <ion-slides>
-      <ion-slide *ngFor="let city of cities">
-        <div class="border">
-          <ion-row>
-            <ion-col class="StampcardColumns StampcardBackground-img" col-12>
-              <img src="../../assets/imgs/{{city.unchecked}}" *ngIf="city.stamped === false" ng-click="stampCard(withStamp)">                
-              <img src="../../assets/imgs/{{city.checked}}" *ngIf="city.stamped === true" ng-click="stampCard(withStamp)">                
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col class="StampcardColumns StampcardBackground-info" col-12>
-              <p>
-                {{city.name}}
-              </p>
-            </ion-col>
-          </ion-row>
-        </div>
+      <ion-slide *ngFor="let city of cities" class="border">
+        <ion-row>
+          <ion-col class="StampcardColumns StampcardBackground-img" col-12>
+            <img src="../../assets/imgs/{{city.unchecked}}" *ngIf="city.stamped === false" ng-click="stampCard(withStamp)">                
+            <img src="../../assets/imgs/{{city.checked}}" *ngIf="city.stamped === true" ng-click="stampCard(withStamp)">                
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="StampcardColumns StampcardBackground-info" col-12>
+            <p>
+              {{city.name}}
+            </p>
+          </ion-col>
+        </ion-row>
       </ion-slide>
     </ion-slides>
   </ion-grid>    
