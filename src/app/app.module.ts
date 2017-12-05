@@ -14,6 +14,9 @@ import { QrCodeProvider } from '../providers/qr-code/qr-code';
 import { StampCardService } from '../services/stamp-card/stamp-card.service';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 
+import { IonicStorageModule } from '@ionic/storage';
+import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -22,6 +25,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireDatabaseModule,
     AngularFireAuthModule
@@ -37,7 +41,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QrCodeProvider,
     StampCardService,
-    UniqueDeviceID
+    UniqueDeviceID,
+    NfcScanProvider
   ]
 })
 export class AppModule {}
