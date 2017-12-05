@@ -11,7 +11,7 @@
     <ion-row>
       <ion-col class="CitiesColumns" col-6 *ngFor="let city of cities">
         <div class="border">
-          <img src="../../assets/imgs/{{city.checked}}" *ngIf="city.stamped === true">
+          <a href="#/stampcard"><img src="../../assets/imgs/{{city.checked}}" *ngIf="city.stamped === true" ng-click="stampCard(withStamp)"></a>
           <img src="../../assets/imgs/{{city.unchecked}}" *ngIf="city.stamped === false">          
         </div>
       </ion-col>

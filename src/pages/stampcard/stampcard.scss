@@ -1,3 +1,19 @@
-page-stampcard {
+ion-content {
+    ion-row {
+        .StampcardColumns {
+            text-align: center;
+        }
+        .StampcardBackground-img {
+            background-color: lightcyan;
+        }
+        .StampcardBackground-info {
+            background-color: lightblue;
+        }
+    }
+}
 
+.border {
+    border: 2px solid #111;
+    border-radius: 8px;
+    margin-bottom: 3vh; 
 }
