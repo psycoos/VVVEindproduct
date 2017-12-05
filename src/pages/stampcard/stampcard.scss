@@ -12,8 +12,31 @@ ion-content {
     }
 }
 
+.slide-custom {
+    width: 85% !important;
+}
+
 .border {
     border: 2px solid #111;
     border-radius: 8px;
     margin-bottom: 3vh; 
+}
+
+%button {
+    border-radius: 50%;
+    width: 7vh;
+    height: 7vh;
+}
+
+.button-blue {
+    @extend %button;
+    background-color: rgb(0, 145, 255);        
+}
+
+.button-stamp {
+    @extend %button;
+    position: absolute;
+    z-index: 1;
+    left: 2rem;
+    bottom: -2rem;
 }
