@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { City } from '../../models/stamp-card/stamp-card.model';
+import { StampCardService } from '../../services/stamp-card/stamp-card.service'
+import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
 @Component({
   selector: 'page-home',
@@ -24,5 +27,8 @@ export class HomePage {
     { id: 10, name: "Franeker", stamped: false, checked: "franeker/franeker_2.svg", unchecked: "franeker/franeker_1.svg"},
     { id: 11, name: "Dokkum", stamped: true, checked: "dokkum/dokkum_2.svg", unchecked: "dokkum/dokkum_1.svg"}
   ];  
-
 }
+function newFunction() {
+  return this;
+}
+
