@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ViewChild } from '@angular/core/src/metadata/di';
-import { ElementRef } from '@angular/core/src/linker/element_ref';
+// import { ViewChild } from '@angular/core/src/metadata/di';
+// import { ElementRef } from '@angular/core/src/linker/element_ref';
+
+declare var google: any;
 
 @Component({
   selector: 'page-home',
@@ -26,7 +28,7 @@ export class HomePage {
     // Map options
     const options = {
       center: location,
-      zoom: 6,
+      zoom: 10,
     }
 
     this.map = new google.maps.Map(this.mapRef.nativeElement, options)
