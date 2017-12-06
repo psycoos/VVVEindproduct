@@ -1,16 +1,34 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ViewChild } from '@angular/core/src/metadata/di';
+import { ElementRef } from '@angular/core/src/linker/element_ref';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  @ViewChild('map') mapRef: ElementRef;
  
   constructor(public navCtrl: NavController) {
     
       }
 
+  ionViewDidLoad() {
+    console.log(this.mapRef);
+  }
+
+  showMap() {
+    // location - lat long
+    const location = new google.maps.LatLng(53.164164, 5.781754);
+
+    // Map options
+    const options = {
+      center: location,
+      zoom: 6,
+    }
+  }
+  
   cities = [
     { id: 1, name: "Leeuwarden", stamped: true, checked: "leeuwarden/leeuwarden_2.svg", unchecked: "leeuwarden/leeuwarden_1.svg"},
     { id: 2, name: "Sloten", stamped: false, checked: "sloten/sloten_2.svg", unchecked: "sloten/sloten_1.svg"},
