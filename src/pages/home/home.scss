@@ -1,23 +1,13 @@
 page-home {
-    ion-header {
-        ion-navbar {
-            .toolbar-background { 
-                background-color: #244994;
-            }
-            ion-title {
-                text-align: center;        
-            }    
-        }
-    }
-    ion-content {
-        ion-row {
-            .CitiesColumns {
-                text-align: center;
-                .border{
-                    border: 1px #111 solid;
-                    border-radius: 5px;
-                    margin-bottom: 3vh; 
-                }
+
+ion-content {
+    ion-row {
+        .CitiesColumns {
+            text-align: center;
+            .border{
+                border: 1px #111 solid;
+                border-radius: 5px;
+                margin-bottom: 3vh; 
             }
         }
     }
@@ -35,6 +25,8 @@ page-home {
     z-index: 1;
     left: 50%;
     transform: translate(-50%, 0);
-    bottom: 1rem;
+    bottom: 10vh;
     background-color: #244994;
+}
+
 }
