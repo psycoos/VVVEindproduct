@@ -1,12 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the MapsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+declare var google: any;
+
 
 @IonicPage()
 @Component({
@@ -14,12 +10,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'maps.html',
 })
 export class MapsPage {
+  @ViewChild('map') mapRef: ElementRef;
+  map: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MapsPage');
+    this.showMap();
+  }
+
+  showMap() {
+    // location - lat long
+    const location = new google.maps.LatLng(53.164164, 5.781754);
+
+    // Map options
+    const options = {
+      center: location,
+      zoom: 10,
+    }
+
+    this.map = new google.maps.Map(this.mapRef.nativeElement, options)
   }
 
 }

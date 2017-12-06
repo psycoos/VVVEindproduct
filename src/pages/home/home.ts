@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { City } from '../../models/stamp-card/stamp-card.model';
 import { StampCardService } from '../../services/stamp-card/stamp-card.service'
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
+
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+
  
 constructor(
   public navCtrl: NavController,
@@ -17,7 +20,6 @@ constructor(
 ) {
 
 }
-
 
   cities = [
     { id: 1, name: "Leeuwarden", stamped: true, checked: "leeuwarden/leeuwarden_2.svg", unchecked: "leeuwarden/leeuwarden_1.svg"},
@@ -35,11 +37,11 @@ constructor(
 
 
 
-  ionViewDidLoad() {
-    this.uniqueDeviceID.get()
-  .then((uuid: any) => console.log(uuid))
-  .catch((error: any) => console.log(error));
-  }
+  // ionViewDidLoad() {
+  //   this.uniqueDeviceID.get()
+  // .then((uuid: any) => console.log(uuid))
+  // .catch((error: any) => console.log(error));
+  // }
 
   // addStamp(){
   //   this.stampCardService.addStamps(this.stampCard);
@@ -48,7 +50,5 @@ constructor(
 
 
 }
-function newFunction() {
-  return this;
-}
+
 
