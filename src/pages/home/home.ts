@@ -9,13 +9,14 @@ import { ElementRef } from '@angular/core/src/linker/element_ref';
 })
 export class HomePage {
   @ViewChild('map') mapRef: ElementRef;
+  map: any;
  
   constructor(public navCtrl: NavController) {
     
       }
 
   ionViewDidLoad() {
-    console.log(this.mapRef);
+    this.showMap();
   }
 
   showMap() {
@@ -27,8 +28,10 @@ export class HomePage {
       center: location,
       zoom: 6,
     }
+
+    this.map = new google.maps.Map(this.mapRef.nativeElement, options)
   }
-  
+
   cities = [
     { id: 1, name: "Leeuwarden", stamped: true, checked: "leeuwarden/leeuwarden_2.svg", unchecked: "leeuwarden/leeuwarden_1.svg"},
     { id: 2, name: "Sloten", stamped: false, checked: "sloten/sloten_2.svg", unchecked: "sloten/sloten_1.svg"},
