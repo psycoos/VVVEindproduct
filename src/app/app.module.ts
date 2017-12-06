@@ -6,12 +6,18 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
 import { QrCodeProvider } from '../providers/qr-code/qr-code';
+import { MapsPage } from '../pages/maps/maps';
+import { UserPage } from '../pages/user/user';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    TabsPage,
+    MapsPage,
+    UserPage
   ],
   imports: [
     BrowserModule,
@@ -20,7 +26,10 @@ import { QrCodeProvider } from '../providers/qr-code/qr-code';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    TabsPage,
+    MapsPage,
+    UserPage
   ],
   providers: [
     StatusBar,
