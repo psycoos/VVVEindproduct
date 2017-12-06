@@ -51,28 +51,33 @@ stampCard = [
     // storage.set('stempelkaart', this.stampCard);
   }
 
-  veranderStad(){
-    this.stampCard[0].value = true;
-    this.storage.set('stempelkaart', this.stampCard);
+//   updateValue( scanResult ) {
+//     for (var i in this.stampCard) {
+//       if (this.stampCard[i].name == scanResult) {
+//          this.stampCard[i].value = true;
+//          this.storage.set('stempelkaart', this.stampCard);
+//          break;
+//       }
+//     }
+//  }
 
-
-  }
-
-  updateValue( scanResult, value ) {
-    for (var i in this.stampCard) {
-      if (this.stampCard[i].name == scanResult) {
-         this.stampCard[i].value = true;
-         break;
-      }
-    }
- }
-
-  dingendoen() {
+  dingendoen(scanResult) {
     // this.storage.set('stempelkaart', this.stampCard);
 
     this.storage.get('stempelkaart').then((val) => {
-      console.log(val);
+      for (var i in val) {
+        if (val[i].name == scanResult) {
+          this.storage.set([i].value, true); //dit gaat ook kapot omdat het een string moet zijn
+          
+        }
+      }
     });
+  }
+
+  latenzien() {
+    this.storage.get('stempelkaart').then((val) => {
+      console.log(val)
+    })
   }
 
   ionViewDidLoad() {
