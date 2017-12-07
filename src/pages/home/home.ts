@@ -61,13 +61,16 @@ stampCard = [
 //     }
 //  }
 
-  dingendoen(scanResult) {
+  dingendoen(scanResult: string) {
     // this.storage.set('stempelkaart', this.stampCard);
 
-    this.storage.get('stempelkaart').then((val) => {
-      for (var i in val) {
-        if (val[i].name == scanResult) {
-          this.storage.set([i].value, true); //dit gaat ook kapot omdat het een string moet zijn
+    this.storage.get('stampcard').then((kaart) => {
+      for (var i in kaart) {
+        if (kaart[i].name === scanResult) {
+          console.log(kaart);
+          console.log(kaart[i]);
+          kaart[i].value = true;
+          this.storage.set('stampcard', kaart); //dit gaat ook kapot omdat het een string moet zijn
           
         }
       }
@@ -75,9 +78,13 @@ stampCard = [
   }
 
   latenzien() {
-    this.storage.get('stempelkaart').then((val) => {
-      console.log(val)
+    // this.storage.get('stempelkaart').then((val) => {
+    //   console.log(val)
+    // })
+    this.storage.get('stampcard').then((val) => {
+      console.log(val);
     })
+    // this.storage.set('stampcard', this.stampCard)
   }
 
   ionViewDidLoad() {
