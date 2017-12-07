@@ -4,6 +4,8 @@ import { City } from '../../models/stamp-card/stamp-card.model';
 import { StampCardService } from '../../services/stamp-card/stamp-card.service'
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { Storage } from '@ionic/storage'
+import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
+
 
 @Component({
   selector: 'page-home',
@@ -46,9 +48,10 @@ stampCard = [
     public navCtrl: NavController,
     public stampCardService: StampCardService,
     private uniqueDeviceID: UniqueDeviceID,
-    public storage: Storage
+    public storage: Storage,
+    private barcode: BarcodeScanner
   ) {
-    // storage.set('stempelkaart', this.stampCard);
+     storage.set('stampcard', this.stampCard);
   }
 
 //   updateValue( scanResult ) {
@@ -61,7 +64,18 @@ stampCard = [
 //     }
 //  }
 
-  dingendoen(scanResult: string) {
+scan() {
+  this.barcode.scan().then((barcodeData) => {
+    this.dingendoen(barcodeData.text)
+  }, (err) => {
+    // error
+    alert(err);
+  });
+}
+
+
+
+dingendoen(scanResult: string) {
     // this.storage.set('stempelkaart', this.stampCard);
 
     this.storage.get('stampcard').then((kaart) => {
@@ -70,8 +84,7 @@ stampCard = [
           console.log(kaart);
           console.log(kaart[i]);
           kaart[i].value = true;
-          this.storage.set('stampcard', kaart); //dit gaat ook kapot omdat het een string moet zijn
-          
+          this.storage.set('stampcard', kaart); //dit gaat ook kapot omdat het een string moet zijn    
         }
       }
     });
@@ -84,7 +97,7 @@ stampCard = [
     this.storage.get('stampcard').then((val) => {
       console.log(val);
     })
-    // this.storage.set('stampcard', this.stampCard)
+   // this.storage.set('stampcard', this.stampCard)
   }
 
   ionViewDidLoad() {
@@ -97,7 +110,5 @@ stampCard = [
   }
 
 }
-function newFunction() {
-  return this;
-}
+
 
