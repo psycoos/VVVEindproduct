@@ -21,26 +21,26 @@ stampCard = [
   {
     name: "Leeuwarden",
     value: false,
-    trueimage: "blabla",
-    falseimage: "blalalala"
+    trueimage: "leeuwarden/leeuwarden_2.svg",
+    falseimage: "leeuwarden/leeuwarden_1.svg"
   },
   {
     name: "Sneek",
     value: false,
-    trueimage: "blabla",
-    falseimage: "blalalala"
+    trueimage: "sneek/sneek_2.svg",
+    falseimage: "sneek/sneek_1.svg"
   },
   {
     name: "Ijlst",
     value: false,
-    trueimage: "blabla",
-    falseimage: "blalalala"
+    trueimage: "ijlst/ijlst_2.svg",
+    falseimage: "ijlst/ijlst_1.svg"
   },
   {
     name: "Sloten",
     value: false,
-    trueimage: "blabla",
-    falseimage: "blalalala"
+    trueimage: "sloten/sloten_2.svg",
+    falseimage: "sloten/sloten_1.svg"
   }
 ]
 
