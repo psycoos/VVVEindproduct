@@ -1,3 +1,45 @@
 page-home {
 
+    ion-content {
+        ion-row {
+            .CitiesColumns {
+                text-align: center;
+                .border{
+                    border: 1px #111 solid;
+                    border-radius: 5px;
+                    margin-bottom: 3vh; 
+                }
+            }
+        }
+    }
+
+    %button {
+        border-radius: 50%;
+        width: 7vh;
+        height: 7vh;
+    }
+
+    .show-more {
+        @extend %button;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: 12vh;
+        background-color: #244994;
+    }
+
+    i {
+        border: solid white;
+        border-width: 0 4px 4px 0;
+        display: inline-flex;
+        padding: 8px;
+        margin-left: 2vh;
+        margin-top: 1vh;
+    }
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);        
+    }
+
 }

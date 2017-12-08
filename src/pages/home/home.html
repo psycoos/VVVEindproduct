@@ -1,16 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-  <button ion-button block clear (click)="Scan)">SCAN HIM</button>
-  <button ion-button block clear (click)="latenzien()">Laat array zien</button>
-</ion-content>
+    <ion-navbar color="primary">
+      <ion-title>
+        Stempelkaart
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="CitiesColumns" col-6 *ngFor="let city of cities">
+          <div class="border">
+            <img src="assets/imgs/{{city.checked}}" *ngIf="city.stamped === true">
+            <img src="assets/imgs/{{city.unchecked}}" *ngIf="city.stamped === false">          
+          </div>
+        </ion-col>
+        <div class="show-more bounce">
+          <i class="down"></i>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
