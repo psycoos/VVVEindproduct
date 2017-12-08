@@ -8,6 +8,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
+import { HttpClientModule } from '@angular/common/http';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { QrCodeProvider } from '../providers/qr-code/qr-code';
@@ -24,6 +27,7 @@ import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
@@ -42,7 +46,8 @@ import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
     QrCodeProvider,
     StampCardService,
     UniqueDeviceID,
-    NfcScanProvider
+    NfcScanProvider,
+    BarcodeScanner
   ]
 })
 export class AppModule {}
