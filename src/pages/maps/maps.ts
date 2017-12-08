@@ -41,7 +41,7 @@ export class MapsPage {
     // Map options
     const options = {
       center: location,
-      zoom: 10,
+      zoom: 9,
       streetViewControl: false,
       mapTypeControl: false,
       fullscreenControl: false

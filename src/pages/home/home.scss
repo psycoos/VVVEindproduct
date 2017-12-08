@@ -25,8 +25,21 @@ page-home {
         z-index: 1;
         left: 50%;
         transform: translate(-50%, 0);
-        bottom: 10vh;
+        bottom: 12vh;
         background-color: #244994;
+    }
+
+    i {
+        border: solid white;
+        border-width: 0 4px 4px 0;
+        display: inline-flex;
+        padding: 8px;
+        margin-left: 2vh;
+        margin-top: 1vh;
+    }
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);        
     }
 
 }
