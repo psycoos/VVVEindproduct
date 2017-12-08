@@ -6,6 +6,8 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { Storage } from '@ionic/storage'
 import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
 
+import { QrCodeProvider } from '../../providers/qr-code/qr-code'
+
 
 
 
@@ -51,7 +53,8 @@ stampCard = [
     public stampCardService: StampCardService,
     private uniqueDeviceID: UniqueDeviceID,
     public storage: Storage,
-    private barcode: BarcodeScanner
+    private barcode: BarcodeScanner,
+    private qrcodeProvider: QrCodeProvider
   ) {
      storage.set('stampcard', this.stampCard);
   }
@@ -67,17 +70,13 @@ stampCard = [
 //  }
 
 scan() {
-  this.barcode.scan().then((barcodeData) => {
-    this.dingendoen(barcodeData.text)
-  }, (err) => {
-    // error
-    alert(err);
-  });
+  this.dingendoen(this.qrcodeProvider.scan())
 }
 
 
 
-dingendoen(scanResult: string) {
+
+dingendoen(scanResult) {
     // this.storage.set('stempelkaart', this.stampCard);
 
     this.storage.get('stampcard').then((kaart) => {
