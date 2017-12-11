@@ -16,6 +16,7 @@ import { MapsPage } from '../pages/maps/maps';
 import { UserPage } from '../pages/user/user';
 import { StampCardService } from '../services/stamp-card/stamp-card.service';
 import { FIREBASE_CONFIG } from './firebase.credentials';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
@@ -35,7 +36,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
