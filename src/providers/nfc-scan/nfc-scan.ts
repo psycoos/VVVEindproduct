@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 
 import { NFC, Ndef } from '@ionic-native/nfc';
@@ -21,7 +21,6 @@ export class NfcScanProvider {
   subscriptions: Array<Subscription> = new Array<Subscription>();
 
   constructor(
-    public http: HttpClient,
     private nfc: NFC,
     private ndef: Ndef
   
