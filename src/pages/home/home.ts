@@ -17,7 +17,7 @@ import { QrCodeProvider } from '../../providers/qr-code/qr-code'
 })
 export class HomePage {
 
-  
+stampCard2: Array<Object> = []
 
 stampCard = [
   {
@@ -54,9 +54,16 @@ stampCard = [
     private uniqueDeviceID: UniqueDeviceID,
     public storage: Storage,
     private barcode: BarcodeScanner,
-    private qrcodeProvider: QrCodeProvider
+    private qrcodeProvider: QrCodeProvider,
+    
   ) {
      storage.set('stampcard', this.stampCard);
+
+     storage.get('stampcard').then((kaart) => {
+      this.stampCard2.push(kaart)
+      console.log(this.stampCard2[0])
+    })
+     
   }
 
 //   updateValue( scanResult ) {
@@ -85,7 +92,8 @@ dingendoen(scanResult) {
           console.log(kaart);
           console.log(kaart[i]);
           kaart[i].value = true;
-          this.storage.set('stampcard', kaart); //dit gaat ook kapot omdat het een string moet zijn    
+          this.storage.set('stampcard', kaart); 
+         //dit gaat ook kapot omdat het een string moet zijn    
         }
       }
     });
