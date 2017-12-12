@@ -7,7 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
-
+import { Geolocation } from '@ionic-native/geolocation';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -55,7 +55,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     StampCardService,
     UniqueDeviceID,
     NfcScanProvider,
-    BarcodeScanner
+    BarcodeScanner,
+    Geolocation
   ]
 })
 export class AppModule {}

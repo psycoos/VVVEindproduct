@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google: any;
 
@@ -13,11 +14,22 @@ export class MapsPage {
   @ViewChild('map') mapRef: ElementRef;
   map: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
   }
 
   ionViewDidLoad() {
     this.showMap();
+
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.addMarker(new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude), this.map);
+     }).catch((error) => {
+       console.log('Error getting location', error);
+     });
+     
+     let watch = this.geolocation.watchPosition();
+     watch.subscribe((data) => {
+      //data.coords
+     });  
   }
 
   showMap() {
@@ -65,7 +77,7 @@ export class MapsPage {
   addMarker (position, map) {
     new google.maps.Marker({
       position,
-      map
+      map,
     })
   }
 
