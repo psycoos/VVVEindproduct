@@ -20,6 +20,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
 import { IonicStorageModule } from '@ionic/storage';
 import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { HttpClient } from '@angular/common/http/';
+import { HttpHandler } from '@angular/common/http/';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     StampCardService,
     UniqueDeviceID,
     NfcScanProvider,
-    BarcodeScanner
+    BarcodeScanner,
+    HttpClient,
+    HttpHandler
   ]
 })
 export class AppModule {}
