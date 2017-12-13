@@ -10,9 +10,20 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 })
 export class HomePage {
  
+<<<<<<< HEAD
   constructor(public navCtrl: NavController) {
     
       }
+=======
+constructor(
+  public navCtrl: NavController,
+  public stampCardService: StampCardService,
+  private uniqueDeviceID: UniqueDeviceID
+) {
+
+}
+
+>>>>>>> be8a7ddb565a77e818c862a6378f264690f6be1a
 
   cities = [
     { id: 1, name: "Leeuwarden", stamped: true, checked: "leeuwarden/leeuwarden_2.svg", unchecked: "leeuwarden/leeuwarden_1.svg"},
@@ -27,6 +38,24 @@ export class HomePage {
     { id: 10, name: "Franeker", stamped: false, checked: "franeker/franeker_2.svg", unchecked: "franeker/franeker_1.svg"},
     { id: 11, name: "Dokkum", stamped: true, checked: "dokkum/dokkum_2.svg", unchecked: "dokkum/dokkum_1.svg"}
   ];  
+<<<<<<< HEAD
+=======
+
+
+
+  ionViewDidLoad() {
+    this.uniqueDeviceID.get()
+  .then((uuid: any) => console.log(uuid))
+  .catch((error: any) => console.log(error));
+  }
+
+  // addStamp(){
+  //   this.stampCardService.addStamps(this.stampCard);
+  //   this.stampCardService.getStampCard()
+  // }
+
+
+>>>>>>> be8a7ddb565a77e818c862a6378f264690f6be1a
 }
 function newFunction() {
   return this;

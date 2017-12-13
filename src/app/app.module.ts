@@ -10,14 +10,20 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
 import { QrCodeProvider } from '../providers/qr-code/qr-code';
+import { MapsPage } from '../pages/maps/maps';
+import { UserPage } from '../pages/user/user';
 import { StampCardService } from '../services/stamp-card/stamp-card.service';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    TabsPage,
+    MapsPage,
+    UserPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,10 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    TabsPage,
+    MapsPage,
+    UserPage
   ],
   providers: [
     StatusBar,

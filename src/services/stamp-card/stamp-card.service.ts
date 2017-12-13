@@ -14,11 +14,11 @@ export class StampCardService {
     }
 
     getStampCard() {
-        return this.stampCardRef;
+        console.log(this.stampCardRef);
     }
 
-    addStamps(city: City) {
-        return this.stampCardRef.push(city);
+    addStamps(Array) {
+        return this.stampCardRef.push(Array);
     }
 
 }
