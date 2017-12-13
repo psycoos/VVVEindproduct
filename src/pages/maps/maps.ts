@@ -21,7 +21,7 @@ export class MapsPage {
     this.showMap();
 
     this.geolocation.getCurrentPosition().then((resp) => {
-      this.addMarker(new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude), this.map);
+      this.showLocation(new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude), this.map);
      }).catch((error) => {
        console.log('Error getting location', error);
      });
@@ -76,6 +76,17 @@ export class MapsPage {
 
   addMarker (position, map) {
     new google.maps.Marker({
+      position,
+      map,
+    })
+  }
+
+  showLocation (position, map) {
+    new google.maps.Marker({
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 5
+      },
       position,
       map,
     })
