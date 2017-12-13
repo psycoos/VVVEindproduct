@@ -21,6 +21,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
+import { GoogleMaps } from '@ionic-native/google-maps';
 
 
 
@@ -57,7 +58,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     StampCardService,
     UniqueDeviceID,
     NfcScanProvider,
-    BarcodeScanner,   
+    BarcodeScanner,
+    GoogleMaps,
   ]
 })
 export class AppModule {}
