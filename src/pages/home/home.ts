@@ -1,14 +1,10 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { City } from '../../models/stamp-card/stamp-card.model';
-import { StampCardService } from '../../services/stamp-card/stamp-card.service'
-import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { Storage } from '@ionic/storage'
 import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
 
 import { QrCodeProvider } from '../../providers/qr-code/qr-code'
-
-
 
 
 @Component({
@@ -17,12 +13,11 @@ import { QrCodeProvider } from '../../providers/qr-code/qr-code'
 })
 export class HomePage {
 
-stampCard2: Array<Object> = []
 
 stampCard = [
   {
     name: "Leeuwarden",
-    value: false,
+    value: true,
     trueimage: "leeuwarden/leeuwarden_2.svg",
     falseimage: "leeuwarden/leeuwarden_1.svg"
   },
@@ -50,8 +45,6 @@ stampCard = [
  
   constructor(
     public navCtrl: NavController,
-    public stampCardService: StampCardService,
-    private uniqueDeviceID: UniqueDeviceID,
     public storage: Storage,
     private barcode: BarcodeScanner,
     private qrcodeProvider: QrCodeProvider,
@@ -59,10 +52,11 @@ stampCard = [
   ) {
      storage.set('stampcard', this.stampCard);
 
-     storage.get('stampcard').then((kaart) => {
-      this.stampCard2.push(kaart)
-      console.log(this.stampCard2[0])
-    })
+     
+    //  storage.get('stampcard').then((kaart) => {
+    //   this.stampCard2.push(kaart)
+    //   console.log(this.stampCard2[0])
+    // })
      
   }
 
@@ -93,6 +87,8 @@ dingendoen(scanResult) {
           console.log(kaart[i]);
           kaart[i].value = true;
           this.storage.set('stampcard', kaart); 
+          
+         
          //dit gaat ook kapot omdat het een string moet zijn    
         }
       }
