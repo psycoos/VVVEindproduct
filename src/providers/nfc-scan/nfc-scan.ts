@@ -21,7 +21,7 @@ export class NfcScanProvider {
   subscriptions: Array<Subscription> = new Array<Subscription>();
 
   constructor(
-    public http: HttpClient,
+    // public http: HttpClient,
     private nfc: NFC,
     private ndef: Ndef
   

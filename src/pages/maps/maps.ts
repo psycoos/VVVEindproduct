@@ -37,7 +37,6 @@ export class MapsPage {
     const Harlingen = new google.maps.LatLng(53.1747075, 5.4149199,21);
     const Franeker = new google.maps.LatLng(53.185715, 5.5455836,21);
     
-    
     // Map options
     const options = {
       center: location,
@@ -49,8 +48,8 @@ export class MapsPage {
 
     this.map = new google.maps.Map(this.mapRef.nativeElement, options)
 
-    this.addMarker(Leeuwarden, this.map);
-    this.addMarker(Dokkum, this.map);
+    this.addMarker(Leeuwarden, this.map); Leeuwarden.setValues({type: "point", id: 1});
+    this.addMarker(Dokkum, this.map); Dokkum.setValues({type: "point", id: 2});
     this.addMarker(Sloten, this.map);
     this.addMarker(IJlst, this.map);
     this.addMarker(Sneek, this.map);
@@ -63,10 +62,24 @@ export class MapsPage {
   }
 
   addMarker (position, map) {
-    new google.maps.Marker({
-      position,
-      map
-    })
+    let marker = new google.maps.Marker({
+      map: this.map,
+      position: this.map.getCenter()
+    });
+    let content = "<h4>Information!</h4>";         
+    this.addInfoWindow(marker, content);
   }
+
+  addInfoWindow(marker, content){
+    
+     let infoWindow = new google.maps.InfoWindow({
+       content: content
+     });
+    
+     google.maps.event.addListener(marker, 'click', () => {
+       infoWindow.open(this.map, marker);
+     });
+    
+   }
 
 }

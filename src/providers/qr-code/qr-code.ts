@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Platform } from 'ionic-angular';
 
-import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
+import { BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
 
 /*
   Generated class for the QrCodeProvider provider.
@@ -14,7 +14,7 @@ import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scann
 export class QrCodeProvider {
 
   constructor(
-    public http: HttpClient,
+    // public http: HttpClient,
     public platform: Platform,
     private barcode: BarcodeScanner
   ) 
