@@ -17,7 +17,7 @@ import { UserPage } from '../pages/user/user';
 import { StampCardService } from '../services/stamp-card/stamp-card.service';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { HttpClientModule } from '@angular/common/http';
-
+import { NFC, Ndef } from '@ionic-native/nfc';
 import { IonicStorageModule } from '@ionic/storage';
 import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
@@ -56,7 +56,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     UniqueDeviceID,
     NfcScanProvider,
     BarcodeScanner,
-    Geolocation
+    Geolocation,
+    NFC,
+    Ndef
   ]
 })
 export class AppModule {}

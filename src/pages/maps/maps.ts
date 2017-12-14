@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google: any;
+var currentLocationMarker;
 
 
 @IonicPage()
@@ -21,7 +22,11 @@ export class MapsPage {
     this.showMap();
 
     this.geolocation.getCurrentPosition().then((resp) => {
-      this.showLocation(new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude), this.map);
+       this.createMarker(new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude), this.map);
+
+       console.log("1");
+       console.log(resp.coords.latitude);
+       
      }).catch((error) => {
        console.log('Error getting location', error);
      });
@@ -29,31 +34,35 @@ export class MapsPage {
      let watch = this.geolocation.watchPosition();
      watch.subscribe((data) => {
       //data.coords
+      console.log("2");
+      console.log(data.coords.latitude, data.coords.longitude);
+
+      this.updateMarker(data.coords.latitude, data.coords.longitude);
      });  
   }
 
   showMap() {
     // location - lat long
-    const location = new google.maps.LatLng(53.164164, 5.781754);
+    const location = new google.maps.LatLng(53.1980506, 5.7919859);
 
     //location for every city
-    const Leeuwarden = new google.maps.LatLng(53.1980506, 5.7919859,21);
-    const Dokkum = new google.maps.LatLng(53.3271086, 5.9986493,21);
-    const Sloten = new google.maps.LatLng(52.8947695, 5.6456006,21);
-    const IJlst = new google.maps.LatLng(53.0110137, 5.6218303,21);
-    const Sneek = new google.maps.LatLng(53.0322788, 5.6632035,21);
-    const Stavoren = new google.maps.LatLng(52.8865688,5.3579681,21);
-    const Hindeloopen = new google.maps.LatLng(52.9424502, 5.4024287,21);
-    const Workum = new google.maps.LatLng(52.9794418, 5.4438464,21);
-    const Bolsward = new google.maps.LatLng(53.0618983, 5.5228519,21);
-    const Harlingen = new google.maps.LatLng(53.1747075, 5.4149199,21);
-    const Franeker = new google.maps.LatLng(53.185715, 5.5455836,21);
+    const Leeuwarden = new google.maps.LatLng(53.1980506, 5.7919859);
+    const Dokkum = new google.maps.LatLng(53.3271086, 5.9986493);
+    const Sloten = new google.maps.LatLng(52.8947695, 5.6456006);
+    const IJlst = new google.maps.LatLng(53.0110137, 5.6218303);
+    const Sneek = new google.maps.LatLng(53.0322788, 5.6632031);
+    const Stavoren = new google.maps.LatLng(52.8865688,5.3579681);
+    const Hindeloopen = new google.maps.LatLng(52.9424502, 5.4024287);
+    const Workum = new google.maps.LatLng(52.9794418, 5.4438464);
+    const Bolsward = new google.maps.LatLng(53.0618983, 5.5228519);
+    const Harlingen = new google.maps.LatLng(53.1747075, 5.4149199);
+    const Franeker = new google.maps.LatLng(53.185715, 5.5455836);
     
     
     // Map options
     const options = {
       center: location,
-      zoom: 9,
+      zoom: 12,
       streetViewControl: false,
       mapTypeControl: false,
       fullscreenControl: false
@@ -81,15 +90,19 @@ export class MapsPage {
     })
   }
 
-  showLocation (position, map) {
-    new google.maps.Marker({
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        scale: 5
-      },
+  createMarker (position, map) {
+    currentLocationMarker = new google.maps.Marker({
+      // icon: {
+      //   path: google.maps.SymbolPath.CIRCLE,
+      //   scale: 5
+      // },
       position,
       map,
     })
-  }
+  } 
 
+  updateMarker(lat, lng) {
+    var newlocation = new google.maps.LatLng(lat, lng);
+    currentLocationMarker.setPosition(newlocation);
+  }
 }
