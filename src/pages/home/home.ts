@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { City } from '../../models/stamp-card/stamp-card.model';
 import { Storage } from '@ionic/storage'
-import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
+import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 
 import { QrCodeProvider } from '../../providers/qr-code/qr-code'
 
@@ -13,103 +13,80 @@ import { QrCodeProvider } from '../../providers/qr-code/qr-code'
 })
 export class HomePage {
 
+  public curStamp = [];
+  stampCard = [
+    {
+      name: "Leeuwarden",
+      value: false,
+      trueimage: "leeuwarden/leeuwarden_2.svg",
+      falseimage: "leeuwarden/leeuwarden_1.svg"
+    },
+    {
+      name: "Sneek",
+      value: false,
+      trueimage: "sneek/sneek_2.svg",
+      falseimage: "sneek/sneek_1.svg"
+    },
+    {
+      name: "Ijlst",
+      value: false,
+      trueimage: "ijlst/ijlst_2.svg",
+      falseimage: "ijlst/ijlst_1.svg"
+    },
+    {
+      name: "Sloten",
+      value: false,
+      trueimage: "sloten/sloten_2.svg",
+      falseimage: "sloten/sloten_1.svg"
+    }
+  ]
 
-stampCard = [
-  {
-    name: "Leeuwarden",
-    value: true,
-    trueimage: "leeuwarden/leeuwarden_2.svg",
-    falseimage: "leeuwarden/leeuwarden_1.svg"
-  },
-  {
-    name: "Sneek",
-    value: false,
-    trueimage: "sneek/sneek_2.svg",
-    falseimage: "sneek/sneek_1.svg"
-  },
-  {
-    name: "Ijlst",
-    value: false,
-    trueimage: "ijlst/ijlst_2.svg",
-    falseimage: "ijlst/ijlst_1.svg"
-  },
-  {
-    name: "Sloten",
-    value: false,
-    trueimage: "sloten/sloten_2.svg",
-    falseimage: "sloten/sloten_1.svg"
-  }
-]
-
- 
- 
   constructor(
     public navCtrl: NavController,
     public storage: Storage,
     private barcode: BarcodeScanner,
     private qrcodeProvider: QrCodeProvider,
-    
   ) {
-     storage.set('stampcard', this.stampCard);
-
-     
-    //  storage.get('stampcard').then((kaart) => {
-    //   this.stampCard2.push(kaart)
-    //   console.log(this.stampCard2[0])
-    // })
-     
+    storage.get('stampcard').then((kaart) => {
+      if (kaart === null || kaart === undefined) {
+        //geen stempelkaart gevonden in de local storage, nieuwe toevoegen
+        storage.set('stampcard', this.stampCard);
+        this.curStamp = this.stampCard;
+      } else  
+        this.curStamp = kaart; //Kaart uit de local storage
+    });
   }
 
-//   updateValue( scanResult ) {
-//     for (var i in this.stampCard) {
-//       if (this.stampCard[i].name == scanResult) {
-//          this.stampCard[i].value = true;
-//          this.storage.set('stempelkaart', this.stampCard);
-//          break;
-//       }
-//     }
-//  }
+  //Clear storage
+  clearStorage() {
+    console.log("CLEAR");
+    this.storage.clear();
+  }
 
-scan() {
-  this.dingendoen(this.qrcodeProvider.scan())
-}
+  scan() {
+    this.barcode.scan().then((barcodeData) => {
+      this.dingendoen(barcodeData.text);
+    }, (err) => {
+      // error
+      alert(err);
+    });
+  }
 
-
-
-
-dingendoen(scanResult) {
-    // this.storage.set('stempelkaart', this.stampCard);
-
+  dingendoen(scanResult) {
     this.storage.get('stampcard').then((kaart) => {
       for (var i in kaart) {
         if (kaart[i].name === scanResult) {
-          console.log(kaart);
-          console.log(kaart[i]);
           kaart[i].value = true;
-          this.storage.set('stampcard', kaart); 
-          
-         
-         //dit gaat ook kapot omdat het een string moet zijn    
+          this.curStamp = kaart;
+          this.storage.set('stampcard', kaart);
         }
       }
     });
   }
 
   latenzien() {
-    // this.storage.get('stempelkaart').then((val) => {
-    //   console.log(val)
-    // })
-    this.storage.get('stampcard').then((val) => {
-      console.log(val);
-    })
-   // this.storage.set('stampcard', this.stampCard)
+    this.dingendoen("Leeuwarden");
   }
 
-  ionViewDidLoad() {
-    
-  }
-
-
+  ionViewDidLoad() {}
 }
-
-
