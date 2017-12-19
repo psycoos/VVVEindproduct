@@ -13,7 +13,7 @@ import { QrCodeProvider } from '../../providers/qr-code/qr-code'
 })
 export class HomePage {
 
-  public curStamp = [];
+  
   stampCard = [
     {
       name: "Leeuwarden",
@@ -41,6 +41,8 @@ export class HomePage {
     }
   ]
 
+  public curStamp = [];
+
   constructor(
     public navCtrl: NavController,
     public storage: Storage,
@@ -65,14 +67,14 @@ export class HomePage {
 
   scan() {
     this.barcode.scan().then((barcodeData) => {
-      this.dingendoen(barcodeData.text);
+      this.checkValue(barcodeData.text);
     }, (err) => {
       // error
       alert(err);
     });
   }
 
-  dingendoen(scanResult) {
+  checkValue(scanResult) {
     this.storage.get('stampcard').then((kaart) => {
       for (var i in kaart) {
         if (kaart[i].name === scanResult) {
@@ -85,7 +87,7 @@ export class HomePage {
   }
 
   latenzien() {
-    this.dingendoen("Leeuwarden");
+  //  this.dingendoen("Leeuwarden");
   }
 
   ionViewDidLoad() {}
