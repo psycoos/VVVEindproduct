@@ -16,10 +16,43 @@
 // automatically applied to the <body> element in the app.
 
 
+//variabls
+$white: #FFFFFF;
+$lightblue: #10DAFE;
+$babyblue: #70B1FB;
+$grey: #575C71;
+
+$font: 'Roboto', sans-serif;
+$bold: 'Roboto', sans-serif, Bold;
+
+$small: 11px;
+$normal: 13px;
+$large: 24px;
+
+
+//header
 ion-header {
     ion-navbar {
+        .toolbar-background {
+            background-color: #2F3346;
+        }
         ion-title {
-            text-align: center;        
+            text-align: left; 
+            .toolbar-title {
+                color: $white;
+            }
         }    
     }
 }
+
+//body
+::-webkit-scrollbar {
+    display: none;
+    }
+
+.scroll-content {
+    background-color: #191D31;
+}
+
+//navbar
+
