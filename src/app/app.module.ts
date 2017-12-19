@@ -10,8 +10,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { QrCodeProvider } from '../providers/qr-code/qr-code';
 import { MapsPage } from '../pages/maps/maps';
 import { UserPage } from '../pages/user/user';
-import { HttpClientModule } from '@angular/common/http';
-import { NFC, Ndef } from '@ionic-native/nfc';
+
+
 import { IonicStorageModule } from '@ionic/storage';
 import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
@@ -32,7 +32,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
