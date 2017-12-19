@@ -14,8 +14,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { QrCodeProvider } from '../providers/qr-code/qr-code';
 import { MapsPage } from '../pages/maps/maps';
 import { UserPage } from '../pages/user/user';
-import { StampCardService } from '../services/stamp-card/stamp-card.service';
-import { FIREBASE_CONFIG } from './firebase.credentials';
 import { HttpClientModule } from '@angular/common/http';
 import { NFC, Ndef } from '@ionic-native/nfc';
 import { IonicStorageModule } from '@ionic/storage';
@@ -34,9 +32,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
     HttpClientModule
   ],
   bootstrap: [IonicApp],
@@ -52,7 +47,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QrCodeProvider,
-    StampCardService,
     UniqueDeviceID,
     NfcScanProvider,
     BarcodeScanner,
