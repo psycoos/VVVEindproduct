@@ -1,7 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { City } from '../../models/stamp-card/stamp-card.model';
-import { StampCardService } from '../../services/stamp-card/stamp-card.service'
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { Storage } from '@ionic/storage'
 import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
@@ -50,7 +49,6 @@ stampCard = [
  
   constructor(
     public navCtrl: NavController,
-    public stampCardService: StampCardService,
     private uniqueDeviceID: UniqueDeviceID,
     public storage: Storage,
     private barcode: BarcodeScanner,
