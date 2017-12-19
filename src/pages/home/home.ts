@@ -9,14 +9,12 @@ import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scann
 import { QrCodeProvider } from '../../providers/qr-code/qr-code'
 
 
-
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  
 stampCard2: Array<Object> = []
 
 stampCard = [
