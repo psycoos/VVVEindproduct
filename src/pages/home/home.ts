@@ -1,10 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { City } from '../../models/stamp-card/stamp-card.model';
-<<<<<<< HEAD
-import { UniqueDeviceID } from '@ionic-native/unique-device-id';
-=======
->>>>>>> StampUpdate
 import { Storage } from '@ionic/storage'
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 
