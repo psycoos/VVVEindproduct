@@ -49,8 +49,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     NfcScanProvider,
     BarcodeScanner,
     Geolocation,
-    NFC,
-    Ndef
+    // NFC,
+    //Ndef
   ]
 })
 export class AppModule {}

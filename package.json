@@ -23,16 +23,20 @@
         "@ionic-native/barcode-scanner": "^4.4.2",
         "@ionic-native/core": "4.3.2",
         "@ionic-native/firebase": "^4.4.2",
+        "@ionic-native/geolocation": "^4.5.2",
         "@ionic-native/nfc": "^4.5.2",
         "@ionic-native/splash-screen": "4.3.2",
         "@ionic-native/status-bar": "4.3.2",
         "@ionic-native/unique-device-id": "^4.4.2",
         "@ionic/storage": "2.1.3",
+        "android-versions": "^1.2.1",
         "angularfire2": "^5.0.0-rc.4",
         "cordova-ios": "4.5.4",
         "cordova-plugin-device": "1.1.4",
+        "cordova-plugin-geolocation": "~3.0.0",
         "cordova-plugin-ionic-webview": "^1.1.11",
         "cordova-plugin-splashscreen": "~4.0.1",
+        "cordova-plugin-uniquedeviceid": "^1.3.2",
         "cordova-plugin-whitelist": "1.3.1",
         "cordova-sqlite-storage": "^2.1.2",
         "firebase": "^4.6.2",
@@ -52,7 +56,9 @@
     "description": "An Ionic project",
     "cordova": {
         "plugins": {
-            "phonegap-plugin-barcodescanner": {},
+            "phonegap-plugin-barcodescanner": {
+                "CAMERA_USAGE_DESCRIPTION": " "
+            },
             "ionic-plugin-keyboard": {},
             "cordova-plugin-whitelist": {},
             "cordova-plugin-device": {},
@@ -61,7 +67,11 @@
             "phonegap-nfc": {
                 "NFC_USAGE_DESCRIPTION": "Read NFC Tags"
             },
-            "cordova-sqlite-storage": {}
+            "cordova-sqlite-storage": {},
+            "cordova-plugin-geolocation": {
+                "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+            },
+            "cordova-plugin-uniquedeviceid": {}
         },
         "dependencies": {
             "@angular/common": "5.0.0",
@@ -126,6 +136,9 @@
             "platforms": [
                 "ios"
             ]
-        }
+        },
+        "platforms": [
+            "ios"
+        ]
     }
 }
