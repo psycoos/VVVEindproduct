@@ -24,6 +24,7 @@ export class QrCodeProvider {
   scan() {
       this.barcode.scan().then((barcodeData) => {
         // success
+        console.log(barcodeData.text);
         return barcodeData.text;
       }, (err) => {
         // error
