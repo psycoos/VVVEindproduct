@@ -11,10 +11,23 @@ ion-content {
             border-radius: 10px 10px 0 0;
         }
         .StampcardBackground-info {
-            background-color: lightblue;
+            background-color:#2F3346;
             border-radius: 0 0 10px 10px;
         }
+        .custom-nav-icon {
+            line-height: 6rem;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            padding-right: 1rem;
+            font-size: 2rem;
+        }
     }
+}
+
+.city-name {
+    font-size: $large;
+    color: white;
+    font-weight: bold;            
 }
 
 .slide-custom {
@@ -28,22 +41,34 @@ ion-content {
 }
 
 %button {
-    border-radius: 50%;
-    width: 7vh;
+    border-radius: 25px;
+    width: fit-content;
     height: 7vh;
+    margin: auto;
+    display: flex;
+    line-height: 5rem;
+    padding: 0 3rem 0 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.button-grey {
+    @extend %button;
+    background-color: #575C71;
+    color: white;
+    font-size: 12px;
 }
 
 .button-blue {
     @extend %button;
-    background-color: rgb(0, 145, 255);        
+    background: linear-gradient(0deg, #70B1FB, #10DAFE);
+    color: white;
+    font-size: $normal;
+    font-weight: bold;
 }
 
 .button-stamp {
     @extend %button;
-    position: absolute;
-    z-index: 1;
-    left: 2rem;
-    bottom: -2rem;
 }
 
 .swiper-container-horizontal > .swiper-pagination {
