@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-slides>
+      <ion-slide *ngFor="let city of stampCard" class="slide-custom border">
+        <ion-row>
+          <ion-col class="StampcardColumns StampcardBackground-img" col-12>
+            <img src="../../assets/imgs/{{city.unchecked}}" *ngIf="city.stamped === false" ng-click="stampCard(withStamp)">                
+            <img src="../../assets/imgs/{{city.checked}}" *ngIf="city.stamped === true" ng-click="stampCard(withStamp)"> 
+            <div class="button-blue button-stamp">
+              <img src="../../assets/imgs/stamp-icon.svg"/>
+            </div>               
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="StampcardColumns StampcardBackground-info" col-12>
+            <p>{{city.name}}</p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>    
+</ion-content>

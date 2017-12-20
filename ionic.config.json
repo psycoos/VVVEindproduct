@@ -1,6 +1,6 @@
 {
   "name": "Stempelkaart",
-  "app_id": "8adc4b8e",
+  "app_id": "5fbcb49d",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
