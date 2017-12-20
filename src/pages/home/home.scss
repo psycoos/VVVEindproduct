@@ -1,16 +1,28 @@
 page-home {
+<<<<<<< HEAD
+=======
+
+    ion-navbar {
+        ion-icon{
+            display: none;
+        }
+    }
+
+>>>>>>> styling/def-design
     ion-content {
         ion-row {
-            .CitiesColumns {
+            .CitiesColumn {
                 text-align: center;
-                .border{
-                    border: 1px #111 solid;
-                    border-radius: 5px;
-                    margin-bottom: 3vh; 
+                .border {
+                    margin-bottom: 3vh;
+                    img {
+                        height: 35vw;
+                    }
                 }
             }
         }
     }
+<<<<<<< HEAD
 
     %button {
         border-radius: 50%;
@@ -40,4 +52,6 @@ page-home {
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);        
     }
+=======
+>>>>>>> styling/def-design
 }

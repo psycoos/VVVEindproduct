@@ -18,7 +18,7 @@ export class MapsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     this.showMap();
 
     this.geolocation.getCurrentPosition().then((resp) => {
