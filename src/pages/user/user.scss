@@ -2,19 +2,32 @@ page-user {
     h1 {
         font-size: 20px;
         width: 100%;
+        padding: 5px 10px 5px 10px;
         color: $white;
+        border-bottom: 2px solid $white;
     }
     h3 {
         font-size: 16px;
-        width: 100%;
         color: $white;
     }
     h4 {
         font-size: 14px;
-        width: 100%;
         color: $white;
-        border: 1px solid black;
     }
+
+    ion-content {
+        .Option {
+            padding: 10px 10px;
+            border-bottom: 0.25px solid $white;
+        }
+        .Option_name {
+            h4 { 
+                margin: 0 0 10px;
+            }
+        }
+    }
+
+
 
 
 }

@@ -15,7 +15,6 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-
 //variabls
 $white: #FFFFFF;
 $lightblue: #10DAFE;
@@ -28,6 +27,15 @@ $bold: 'Roboto', sans-serif, Bold;
 $small: 11px;
 $normal: 13px;
 $large: 24px;
+
+//custom icons
+.ion-md-maps {
+    content: url(../../assets/icon/maps.svg);
+    width: 24px;
+    height: 32px;
+    padding: 6px 4px 2px;
+    opacity: 0.9;
+  }
 
 //header
 ion-header {

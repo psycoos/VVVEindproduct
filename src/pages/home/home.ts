@@ -38,7 +38,7 @@ export class HomePage {
       value: false,
       trueimage: "sloten/sloten_2.svg",
       falseimage: "sloten/sloten_1.svg"
-    }
+    },
   ]
 
   public curStamp = [];
