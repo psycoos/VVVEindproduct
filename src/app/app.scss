@@ -22,11 +22,10 @@ $babyblue: #70B1FB;
 $grey: #575C71;
 
 $font: 'Roboto', sans-serif;
-$bold: 'Roboto', sans-serif, Bold;
 
 $small: 11px;
 $normal: 13px;
-$large: 24px;
+$large: 20px;
 
 //custom icons
 .ion-ios-customicon,
@@ -123,6 +122,10 @@ ion-header {
 
 .scroll-content {
     background-color: #191D31;
+}
+
+.toolbar-ios {
+    border-top: 22px solid white;
 }
 
 //navbar
