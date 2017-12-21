@@ -16,6 +16,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { IonicStorageModule } from '@ionic/storage';
 import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { stampService } from '../providers/stamp-service'
 
 
 
@@ -52,7 +53,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     Geolocation,
     // NFC,
     // Ndef
-    InAppBrowser
+    InAppBrowser,
+    stampService,
   ]
 })
 export class AppModule {}

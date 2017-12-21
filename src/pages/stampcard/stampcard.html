@@ -7,7 +7,7 @@
   <ion-grid class="padding-top" no-bounce>
     <div class="gradient-left"></div>
     <ion-slides slidesPerView="1" spaceBetween="-35" loop="true">
-      <ion-slide *ngFor="let city of stampcarousel" class="slide-custom">
+      <ion-slide *ngFor="let city of stampService.stamp" class="slide-custom">
         <ion-row>
           <ion-col class="StampcardColumns StampcardBackground-img" col-12>
           </ion-col>
@@ -18,7 +18,7 @@
             <div class="button-grey button-stamp" (click)="openhim()">
               <img src="assets/imgs/nav-icon.svg" class="custom-nav-icon"/> Navigeer naar stempelpost
             </div>               
-            <div class="button-blue button-stamp">
+            <div class="button-blue button-stamp" (click)="scan()">
               Stempelen
             </div>               
           </ion-col>

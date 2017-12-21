@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { City } from '../../models/stamp-card/stamp-card.model';
 import { Storage } from '@ionic/storage'
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+import { stampService } from '../../providers/stamp-service';
 
 
 
@@ -14,6 +15,7 @@ import { StampcardPage } from '../stampcard/stampcard';
 })
 export class HomePage {
 
+  
   
   stampCard = [
     {
@@ -87,21 +89,21 @@ export class HomePage {
     }
   ] //deze array wordt gebruikt om de stampcard te initialiseren
 
-  public curStamp = []; //Deze array loopt altijd synchroon met de localstorage
 
   constructor(
     public navCtrl: NavController,
     public storage: Storage,
-    private barcode: BarcodeScanner
+    private barcode: BarcodeScanner,
+    private stampService: stampService,
   ) {
     //zet de stempelkaart in de array als er nog geen is, update anders curStamp met localstorage
     storage.get('stampcard').then((kaart) => {
       if (kaart === null || kaart === undefined) {
         //geen stempelkaart gevonden in de local storage, nieuwe toevoegen
         storage.set('stampcard', this.stampCard);
-        this.curStamp = this.stampCard;
+        stampService.stamp = this.stampCard;
       } else  
-        this.curStamp = kaart; //kaart uit de localstorage
+        stampService.stamp = kaart; //kaart uit de localstorage
     });
   }
 
@@ -112,26 +114,26 @@ export class HomePage {
   }
 
   //scan qr-code
-  scan() {
-    this.barcode.scan().then((barcodeData) => {
-      this.checkValue(barcodeData.text);  //roep checkValue aan op het resultaat van de scan
-    }, (err) => {
-      // error
-      alert(err);
-    });
-  }
+  // scan() {
+  //   this.barcode.scan().then((barcodeData) => {
+  //     this.checkValue(barcodeData.text);  //roep checkValue aan op het resultaat van de scan
+  //   }, (err) => {
+  //     // error
+  //     alert(err);
+  //   });
+  // }
 
 
-  //verandert de stempel state van de gescande stad in true
-  checkValue(scanResult) {
-    this.storage.get('stampcard').then((kaart) => {
-      for (var i in kaart) {
-        if (kaart[i].name === scanResult) {//check of de scan overeenkomt met een stad in de stempelkaart
-          kaart[i].value = true;//set de value
-          this.curStamp = kaart;//update curStamp
-          this.storage.set('stampcard', kaart);//update localstorage zodat deze gelijk is aan curStamp
-        }
-      }
-    });
-  }
+  // //verandert de stempel state van de gescande stad in true
+  // checkValue(scanResult) {
+  //   this.storage.get('stampcard').then((kaart) => {
+  //     for (var i in kaart) {
+  //       if (kaart[i].name === scanResult) {//check of de scan overeenkomt met een stad in de stempelkaart
+  //         kaart[i].value = true;//set de value
+  //         this.stampService.stamp = kaart;//update curStamp
+  //         this.storage.set('stampcard', kaart);//update localstorage zodat deze gelijk is aan curStamp
+  //       }
+  //     }
+  //   });
+  // }
 }
