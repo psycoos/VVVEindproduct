@@ -4,8 +4,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-grid>
-    <ion-slides>
+  <ion-grid class="padding-top">
+    <ion-slides slidesPerView="1" spaceBetween="-35" loop="true">
       <ion-slide *ngFor="let city of stampCard" class="slide-custom">
         <ion-row>
           <ion-col class="StampcardColumns StampcardBackground-img" col-12>
@@ -25,6 +25,8 @@
           </ion-col>
         </ion-row>
       </ion-slide>
+      <!-- <ion-slide>
+      </ion-slide> -->
     </ion-slides>
   </ion-grid>    
 </ion-content>

@@ -24,6 +24,19 @@ ion-content {
     }
 }
 
+.swiper-pagination-bullet-active {
+    background: #70B1FB !important;
+    width: 17px !important;
+    height: 17px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    background: #2F3346;
+}
+
 .city-name {
     font-size: $large;
     color: white;
@@ -32,6 +45,23 @@ ion-content {
 
 .slide-custom {
     width: 100% !important;
+}
+
+.slide-zoom {
+    width: 85%;
+}
+
+ion-app.ios [padding] .scroll-content {
+    padding: 12px 0 0 0 !important;
+}
+
+ion-slides {
+    width: 88%;
+    margin: auto;
+}
+
+.padding-top {
+    padding: 20px 0 0 0;
 }
 
 .border {
@@ -48,8 +78,8 @@ ion-content {
     display: flex;
     line-height: 5rem;
     padding: 0 3rem 0 3rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .button-grey {
@@ -72,16 +102,7 @@ ion-content {
 }
 
 .swiper-container-horizontal > .swiper-pagination {
-    bottom: 0;
     display: block !important;
-}
-
-.swiper-pagination-bullet-active {
-    background: #007aff;
-}
-
-.swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background: #2F3346;
+    position: fixed;
+    bottom: 8rem;
 }
