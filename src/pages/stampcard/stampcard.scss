@@ -15,11 +15,8 @@ ion-content {
             border-radius: 0 0 10px 10px;
         }
         .custom-nav-icon {
-            line-height: 6rem;
-            -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+            width: 3rem;
             padding-right: 1rem;
-            font-size: 2rem;
         }
     }
 }
@@ -77,7 +74,6 @@ ion-slides {
     margin: auto;
     display: flex;
     line-height: 5rem;
-    padding: 0 3rem 0 3rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -87,6 +83,7 @@ ion-slides {
     background-color: #575C71;
     color: white;
     font-size: 12px;
+    padding: 0 2rem 0 2rem;
 }
 
 .button-blue {
@@ -95,6 +92,7 @@ ion-slides {
     color: white;
     font-size: $normal;
     font-weight: bold;
+    padding: 0 3rem 0 3rem;
 }
 
 .button-stamp {
