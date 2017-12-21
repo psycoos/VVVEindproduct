@@ -36,6 +36,48 @@ export class HomePage {
       value: false,
       trueimage: "sloten/sloten_2.svg",
       falseimage: "sloten/sloten_1.svg"
+    },
+    {
+      name: "Bolsward",
+      value: false,
+      trueimage: "bolsward/bolsward_2.svg",
+      falseimage: "bolsward/bolsward_1.svg"
+    },
+    {
+      name: "Dokkum",
+      value: false,
+      trueimage: "dokkum/dokkum_2.svg",
+      falseimage: "dokkum/dokkum_1.svg"
+    },
+    {
+      name: "Franeker",
+      value: false,
+      trueimage: "franeker/franeker_2.svg",
+      falseimage: "franeker/franeker_1.svg"
+    },
+    {
+      name: "Harlingen",
+      value: false,
+      trueimage: "harlingen/harlingen_2.svg",
+      falseimage: "harlingen/harlingen_1.svg"
+    },
+    {
+      name: "Hindeloopen",
+      value: false,
+      trueimage: "hindeloopen/hindeloopen_2.svg",
+      falseimage: "hindeloopen/hindeloopen_1.svg"
+    },
+    {
+      name: "Stavoren",
+      value: false,
+      trueimage: "stavoren/stavoren_2.svg",
+      falseimage: "stavoren/stavoren_1.svg"
+    },
+    {
+      name: "Workum",
+      value: false,
+      trueimage: "workum/workum_2.svg",
+      falseimage: "workum/workum_1.svg"
     }
   ] //deze array wordt gebruikt om de stampcard te initialiseren
 
