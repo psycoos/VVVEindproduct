@@ -7,7 +7,7 @@
   <ion-grid class="padding-top" no-bounce>
     <div class="gradient-left"></div>
     <ion-slides slidesPerView="1" spaceBetween="-35" loop="true">
-      <ion-slide *ngFor="let city of stampCard" class="slide-custom">
+      <ion-slide *ngFor="let city of stampcarousel" class="slide-custom">
         <ion-row>
           <ion-col class="StampcardColumns StampcardBackground-img" col-12>
             <img src="assets/imgs/{{city.unchecked}}" *ngIf="city.stamped === false" ng-click="stampCard(withStamp)">                

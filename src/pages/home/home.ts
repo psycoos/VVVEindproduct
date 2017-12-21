@@ -6,6 +6,7 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 
 import { QrCodeProvider } from '../../providers/qr-code/qr-code'
 
+import { StampcardPage } from '../stampcard/stampcard';
 
 @Component({
   selector: 'page-home',

@@ -1,33 +1,32 @@
 <ion-header>
-
-    <ion-navbar>
-        <div class="arrow-back">
-            <ion-icon name="arrow-back"></ion-icon>
-        </div>
-      <ion-title>
-        Stempelkaart
-      </ion-title>
-      <h3>
-        naam 
-      </h3>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar>
+      <div class="arrow-back">
+          <ion-icon name="arrow-back"></ion-icon>
+      </div>
+    <ion-title>
+      Stempelkaart
+    </ion-title>
+    <h3>
+      naam 
+    </h3>
+  </ion-navbar>
+</ion-header>
   
-  <ion-content padding>
-    <ion-grid>
-      <ion-row>
-        <ion-col class="CitiesColumn" col-6 *ngFor="let city of curStamp" (click)="scan()">
-          <div class="border">
-            <img src="assets/imgs/{{city.trueimage}}" *ngIf="city.value === true">
-            <img src="assets/imgs/{{city.falseimage}}" *ngIf="city.value === false">          
-          </div>
-        </ion-col>
-        <div class="show-more bounce">
-          <a href="#/stampcard"><i class="down"></i></a>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="CitiesColumn" col-6 *ngFor="let city of curStamp" (click)="scan()">
+        <div class="border">
+          <img src="assets/imgs/{{city.trueimage}}" *ngIf="city.value === true">
+          <img src="assets/imgs/{{city.falseimage}}" *ngIf="city.value === false">          
         </div>
+      </ion-col>
+      <div class="show-more bounce" (click)="this.navCtrl.push('StampcardPage')">
+        <i class="down"></i>
+      </div>
 
-        <button ion-button full (click)="latenzien()">CLICK HIM</button>
-        <button ion-button full (click)="clearStorage()">CLEAR HIM</button>
-      </ion-row>
-    </ion-grid>
-  </ion-content>
+      <button ion-button full (click)="latenzien()">CLICK HIM</button>
+      <button ion-button full (click)="clearStorage()">CLEAR HIM</button>
+    </ion-row>
+  </ion-grid>
+</ion-content>
