@@ -49,6 +49,28 @@ $large: 24px;
   margin: 0;
 }
 
+ion-icon {
+    // custom icons
+    &[class*="custom-icon-map"] {
+        mask-image: url(../../assets/icon/maps.svg);
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+    }
+    &[class*="custom-icon-stamp"] {
+        mask-image: url(../../assets/icon/stempel.svg);
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+    }
+}
+
 //header
 ion-header {
     height: 97px;
