@@ -5,6 +5,9 @@ import { Storage } from '@ionic/storage'
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 
 
+
+import { StampcardPage } from '../stampcard/stampcard';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -17,19 +20,22 @@ export class HomePage {
       name: "Leeuwarden",
       value: false,
       trueimage: "leeuwarden/leeuwarden_2.svg",
-      falseimage: "leeuwarden/leeuwarden_1.svg"
+      falseimage: "leeuwarden/leeuwarden_1.svg",
+      mapsURL: "https://www.google.com/maps/dir/?api=1&destination=Leeuwarden&travelmode=walking"
     },
     {
       name: "Sneek",
       value: false,
       trueimage: "sneek/sneek_2.svg",
-      falseimage: "sneek/sneek_1.svg"
+      falseimage: "sneek/sneek_1.svg",
+      mapsURL: "https://www.google.com/maps/dir/?api=1&destination=Leeuwarden&travelmode=walking"
     },
     {
       name: "Ijlst",
       value: false,
       trueimage: "ijlst/ijlst_2.svg",
-      falseimage: "ijlst/ijlst_1.svg"
+      falseimage: "ijlst/ijlst_1.svg",
+      mapsURL: "https://www.google.com/maps/dir/?api=1&destination=Leeuwarden&travelmode=walking"
     },
     {
       name: "Sloten",

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding no-bounce>
+  <ion-grid class="padding-top" no-bounce>
+    <div class="gradient-left"></div>
+    <ion-slides slidesPerView="1" spaceBetween="-35" loop="true">
+      <ion-slide *ngFor="let city of stampcarousel" class="slide-custom">
+        <ion-row>
+          <ion-col class="StampcardColumns StampcardBackground-img" col-12>
+            <img src="assets/imgs/{{city.unchecked}}" *ngIf="city.stamped === false" ng-click="stampCard(withStamp)">                
+            <img src="assets/imgs/{{city.checked}}" *ngIf="city.stamped === true" ng-click="stampCard(withStamp)"> 
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="StampcardColumns StampcardBackground-info" col-12>
+            <p class="city-name">{{city.name}}</p>
+            <div class="button-grey button-stamp" (click)="openhim()">
+              <img src="assets/imgs/nav-icon.svg" class="custom-nav-icon"/> Navigeer naar stempelpos
+            </div>               
+            <div class="button-blue button-stamp">
+              Stempelen
+            </div>               
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+    <div class="gradient-right"></div>
+  </ion-grid>
+</ion-content>

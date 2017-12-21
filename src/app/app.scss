@@ -15,11 +15,117 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+//variabls
+$white: #FFFFFF;
+$lightblue: #10DAFE;
+$babyblue: #70B1FB;
+$grey: #575C71;
 
-ion-header {
-    ion-navbar {
-        ion-title {
-            text-align: center;        
-        }    
+$font: 'Roboto', sans-serif;
+
+$small: 11px;
+$normal: 13px;
+$large: 20px;
+
+//custom icons
+.ion-ios-customicon,
+.ion-md-customicon {
+  content: url(../../assets/icon/maps.svg);
+  width: 24px;
+  height: 32px;
+  opacity: 0.9;
+  padding: 0;
+  margin: 0;
+}
+
+.ion-ios-customicon-outline,
+.ion-md-customicon-outline {
+  content: url(../../assets/icon/maps-active.svg);
+  width: 24px;
+  height: 32px;
+  opacity: 0.9;
+  padding: 0;
+  margin: 0;
+}
+
+ion-icon {
+    // custom icons
+    &[class*="custom-icon-map"] {
+        mask-image: url(../../assets/icon/maps.svg);
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+    }
+    &[class*="custom-icon-stamp"] {
+        mask-image: url(../../assets/icon/stempel.svg);
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
     }
 }
+
+//header
+ion-header {
+    height: 97px;
+    ion-navbar {
+        height: 97px;
+        .toolbar-background {
+            background-color: #2F3346;
+        }
+            text-align: center;
+            .arrow-back {
+                float: left;
+                height: 48px;
+                width: 48px;
+                margin: 0 10px 0 0;
+                padding-top: 8px;
+                ion-icon {
+                    margin: 0 8px 0 8px;
+                    font-size: 32px;
+                    color: $white;
+                }
+
+            }
+        ion-title {
+            text-align: left; 
+            .toolbar-title {
+                color: $white;
+                font-size: $large;
+                padding: 0;
+            }
+        } 
+        h3 {
+            float: left;
+            color: $white;
+            padding: 0;
+            margin: 0;
+            font-size: $normal;
+            
+        }   
+    }
+}
+
+//body
+
+//kan later weg BEGIN
+::-webkit-scrollbar {
+    display: none;
+    }
+//END
+
+
+.scroll-content {
+    background-color: #191D31;
+}
+
+.toolbar-ios {
+    border-top: 22px solid white;
+}
+
+//navbar
