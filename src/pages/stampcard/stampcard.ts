@@ -6,14 +6,17 @@ import { HomePage } from '../home/home';
 import { UserPage } from '../user/user';
 
 import { Storage } from '@ionic/storage';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 @IonicPage()
 @Component({
   selector: 'page-stampcard',
   templateUrl: 'stampcard.html',
 })
-export class StampcardPage {
 
+export class StampcardPage {
+  
   tab1Root = MapsPage;
   tab2Root = HomePage;
   tab3Root = UserPage;
@@ -23,7 +26,8 @@ export class StampcardPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public storage: Storage
+    public storage: Storage,
+    private iab: InAppBrowser
   ) {
 
     //zet de stempelkaart in de array als er nog geen is, update anders curStamp met localstorage
@@ -32,7 +36,10 @@ export class StampcardPage {
     });
     
   }
-
+  openhim(){
+    const browser = this.iab.create('https://www.google.com/maps/dir/?api=1&destination=Leeuwarden&travelmode=walking');
+  }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad StampcardPage');
   }

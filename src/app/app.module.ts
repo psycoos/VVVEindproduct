@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { QrCodeProvider } from '../providers/qr-code/qr-code';
 import { MapsPage } from '../pages/maps/maps';
 import { UserPage } from '../pages/user/user';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 import { IonicStorageModule } from '@ionic/storage';
@@ -48,9 +49,10 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     QrCodeProvider,
     NfcScanProvider,
     BarcodeScanner,
-    Geolocation
+    Geolocation,
     // NFC,
     // Ndef
+    InAppBrowser
   ]
 })
 export class AppModule {}
