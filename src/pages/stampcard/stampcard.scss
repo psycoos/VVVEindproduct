@@ -76,8 +76,12 @@ ion-slides {
     margin: auto;
 }
 
+.scroll-content {
+    overflow: unset;
+}
+
 .padding-top {
-    padding: 20px 0 0 0;
+    padding: 0;
 }
 
 .border {
