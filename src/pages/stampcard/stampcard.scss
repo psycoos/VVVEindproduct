@@ -33,6 +33,25 @@ ion-content {
     opacity: 1;
     background: #2F3346;
 }
+%gradient {
+    width: 9%;
+    height: 100%;
+    position: absolute;
+}
+
+.gradient-left {
+    @extend %gradient;
+    left: 0%;
+    background: linear-gradient(to left, rgba(25, 29, 49,0), rgb(25, 29, 49), rgb(25, 29, 49), rgb(25, 29, 49));
+    z-index: 99;
+}
+
+.gradient-right {
+    @extend %gradient;
+    right: 0%;
+    background: linear-gradient(to right, rgba(25, 29, 49,0), rgb(25, 29, 49), rgb(25, 29, 49), rgb(25, 29, 49));
+    z-index: 99;
+}
 
 .city-name {
     font-size: $large;

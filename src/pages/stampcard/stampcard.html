@@ -5,6 +5,7 @@
 
 <ion-content padding>
   <ion-grid class="padding-top">
+    <div class="gradient-left"></div>
     <ion-slides slidesPerView="1" spaceBetween="-35" loop="true">
       <ion-slide *ngFor="let city of stampCard" class="slide-custom">
         <ion-row>
@@ -25,8 +26,9 @@
           </ion-col>
         </ion-row>
       </ion-slide>
-      <!-- <ion-slide>
-      </ion-slide> -->
+      <ion-slide>
+      </ion-slide>
     </ion-slides>
-  </ion-grid>    
+    <div class="gradient-right"></div>
+  </ion-grid>
 </ion-content>

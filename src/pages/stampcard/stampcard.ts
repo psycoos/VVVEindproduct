@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the StampcardPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { MapsPage } from '../maps/maps';
+import { HomePage } from '../home/home';
+import { UserPage } from '../user/user';
 
 @IonicPage()
 @Component({
@@ -14,6 +11,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'stampcard.html',
 })
 export class StampcardPage {
+
+  tab1Root = MapsPage;
+  tab2Root = HomePage;
+  tab3Root = UserPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     
