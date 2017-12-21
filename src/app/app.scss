@@ -51,7 +51,7 @@ $large: 20px;
 ion-icon {
     // custom icons
     &[class*="custom-icon-map"] {
-        mask-image: url(../../assets/icon/maps.svg);
+        mask-image: url(assets/icon/maps.svg);
         mask-size: contain;
         mask-position: 50% 50%;
         mask-repeat: no-repeat;
@@ -60,7 +60,7 @@ ion-icon {
         height: 1em;
     }
     &[class*="custom-icon-stamp"] {
-        mask-image: url(../../assets/icon/stempel.svg);
+        mask-image: url(assets/icon/stempel.svg);
         mask-size: contain;
         mask-position: 50% 50%;
         mask-repeat: no-repeat;
