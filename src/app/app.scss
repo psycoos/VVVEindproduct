@@ -75,23 +75,14 @@ ion-header {
     height: 97px;
     ion-navbar {
         height: 97px;
+        padding: 4px 30px !important;
+
+
         .toolbar-background {
             background-color: #2F3346;
         }
-            text-align: center;
-            .arrow-back {
-                float: left;
-                height: 48px;
-                width: 48px;
-                margin: 0 10px 0 0;
-                padding-top: 8px;
-                ion-icon {
-                    margin: 0 8px 0 8px;
-                    font-size: 32px;
-                    color: $white;
-                }
 
-            }
+
         ion-title {
             text-align: left; 
             .toolbar-title {
@@ -99,15 +90,7 @@ ion-header {
                 font-size: $large;
                 padding: 0;
             }
-        } 
-        h3 {
-            float: left;
-            color: $white;
-            padding: 0;
-            margin: 0;
-            font-size: $normal;
-            
-        }   
+        }  
     }
 }
 
