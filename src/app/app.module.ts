@@ -11,6 +11,7 @@ import { QrCodeProvider } from '../providers/qr-code/qr-code';
 import { MapsPage } from '../pages/maps/maps';
 import { UserPage } from '../pages/user/user';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { ChartsModule } from 'ng2-charts';
 
 
 import { IonicStorageModule } from '@ionic/storage';
@@ -34,6 +35,7 @@ import { stampService } from '../providers/stamp-service'
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    ChartsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

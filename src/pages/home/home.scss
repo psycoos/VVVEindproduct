@@ -1,8 +1,13 @@
 page-home {
 
     ion-navbar {
-        ion-icon{
-            display: none;
+        ion-title {
+            width: 50%;
+        }
+        canvas{
+            width: 50px !important;
+            height: 30px !important;
+            float: right;
         }
     }
 

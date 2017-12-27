@@ -15,6 +15,9 @@ import { StampcardPage } from '../stampcard/stampcard';
 })
 export class HomePage {
 
+  public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  public doughnutChartData:number[] = [350, 450, 100];
+  public doughnutChartType:string = 'doughnut';
   
   
   stampCard = [
