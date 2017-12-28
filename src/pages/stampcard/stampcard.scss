@@ -15,6 +15,7 @@ ion-content {
             border-radius: 0 0 10px 10px;
         }
         .custom-nav-icon {
+            padding-bottom: 0.6rem;
             width: 3rem;
             padding-right: 1rem;
         }
@@ -37,6 +38,7 @@ ion-content {
     width: 9%;
     height: 100%;
     position: absolute;
+    top: 0;
 }
 
 .gradient-left {
@@ -64,7 +66,7 @@ ion-content {
 }
 
 .slide-zoom {
-    width: 85%;
+    width: 95%;
 }
 
 ion-app.ios [padding] .scroll-content {
@@ -93,10 +95,10 @@ ion-slides {
 %button {
     border-radius: 25px;
     width: fit-content;
-    height: 7vh;
+    height: 6vh;
     margin: auto;
     display: flex;
-    line-height: 5rem;
+    line-height: 4rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -106,12 +108,12 @@ ion-slides {
     background-color: #575C71;
     color: white;
     font-size: 12px;
-    padding: 0 2rem 0 2rem;
+    padding: 0 1.5rem 0 1.5rem;
 }
 
 .button-blue {
     @extend %button;
-    background: linear-gradient(0deg, #70B1FB, #10DAFE);
+    background: linear-gradient(0deg, #10DAFE, #70B1FB);
     color: white;
     font-size: $normal;
     font-weight: bold;
@@ -133,9 +135,30 @@ ion-slides {
 }
 
 .slide-custom.swiper-slide.swiper-slide-prev {
+    padding-right: 5rem;
     opacity: 0.3;
 }
 
 .slide-custom.swiper-slide.swiper-slide-next {
+    padding-left: 5rem;
     opacity: 0.3;
+}
+
+.swiper-slide-prev .slide-knitcap {
+    margin-right: 5rem;
+}
+
+.swiper-slide-next .slide-knitcap {
+    margin-left: 5rem;
+}
+
+.slide-knitcap {
+    background-image: url(../assets/imgs/muts.svg);
+    width: 100%;
+    position: absolute;
+    height: 15vh;
+    top: -7.8vh;
+    left: -3.5vh;
+    z-index: 1;
+    background-repeat: no-repeat;
 }

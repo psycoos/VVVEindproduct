@@ -5,11 +5,12 @@
 
 <ion-content padding no-bounce>
   <ion-grid class="padding-top" no-bounce>
-    <div class="gradient-left"></div>
+    <!-- <div class="gradient-left"></div> -->
     <ion-slides slidesPerView="1" spaceBetween="-35" loop="true">
       <ion-slide *ngFor="let city of stampService.stamp" class="slide-custom">
         <ion-row>
-          <ion-col class="StampcardColumns StampcardBackground-img" col-12>
+            <div class="slide-knitcap"></div>
+            <ion-col class="StampcardColumns StampcardBackground-img" col-12>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -25,6 +26,6 @@
         </ion-row>
       </ion-slide>
     </ion-slides>
-    <div class="gradient-right"></div>
+    <!-- <div class="gradient-right"></div> -->
   </ion-grid>
 </ion-content>
