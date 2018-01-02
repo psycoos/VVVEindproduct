@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
+//variables
 declare var google: any;
 var currentLocationMarker;
 
@@ -18,9 +19,11 @@ export class MapsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
   }
 
+  //when the user opens the mapgs page
   ionViewDidEnter() {
     this.showMap();
 
+    //gets the user location and returns the coords in lat & lng
     this.geolocation.getCurrentPosition().then((resp) => {
        this.createMarker(new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude), this.map);
 
@@ -31,6 +34,7 @@ export class MapsPage {
        console.log('Error getting location', error);
      });
      
+     //updates the user location and returns the coords in lat & lng
      let watch = this.geolocation.watchPosition();
      watch.subscribe((data) => {
       //data.coords
@@ -41,8 +45,9 @@ export class MapsPage {
      });  
   }
 
+  //map coords
   showMap() {
-    // location - lat long
+    // location for the centre of the map
     const location = new google.maps.LatLng(53.1980506, 5.7919859);
 
     //location for every city
@@ -68,6 +73,7 @@ export class MapsPage {
       fullscreenControl: false
     }
 
+    //initializes the map
     this.map = new google.maps.Map(this.mapRef.nativeElement, options)
 
     this.addMarker(Leeuwarden, this.map);
@@ -83,6 +89,7 @@ export class MapsPage {
     this.addMarker(Franeker, this.map);
   }
 
+  // adds marker for every stamp location
   addMarker (position, map) {
     var iconBase = 'assets/imgs/';
     new google.maps.Marker({
@@ -93,13 +100,10 @@ export class MapsPage {
     })
   }
 
+  // creates an user location marker
   createMarker (position, map) {
     var iconBase = 'assets/imgs/';
     currentLocationMarker = new google.maps.Marker({
-      // icon: {
-      //   path: google.maps.SymbolPath.CIRCLE,
-      //   scale: 5
-      // },
       position,
       map,
       icon: iconBase + 'maps_schaatser.png',
@@ -107,6 +111,7 @@ export class MapsPage {
     })
   } 
 
+  // updates the user location marker if the user is moving
   updateMarker(lat, lng) {
     var newlocation = new google.maps.LatLng(lat, lng);
     currentLocationMarker.setPosition(newlocation);
