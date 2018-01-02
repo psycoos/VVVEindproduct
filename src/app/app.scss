@@ -28,28 +28,8 @@ $normal: 13px;
 $large: 20px;
 
 //custom icons
-.ion-ios-customicon,
-.ion-md-customicon {
-  content: url(../../assets/icon/maps.svg);
-  width: 24px;
-  height: 32px;
-  opacity: 0.9;
-  padding: 0;
-  margin: 0;
-}
-
-.ion-ios-customicon-outline,
-.ion-md-customicon-outline {
-  content: url(../../assets/icon/maps-active.svg);
-  width: 24px;
-  height: 32px;
-  opacity: 0.9;
-  padding: 0;
-  margin: 0;
-}
 
 ion-icon {
-    // custom icons
     &[class*="custom-icon-map"] {
         mask-image: url(../assets/icon/maps.svg);
         mask-size: contain;
@@ -70,16 +50,27 @@ ion-icon {
     }
 }
 
+.icon-ios {
+    height: .2em;
+    width: .2em;
+}
+
 //header
 ion-header {
-    height: 97px;
+    height: 80px;
     ion-navbar {
-        height: 97px;
+        height: 80px;
         padding: 4px 30px !important;
 
 
         .toolbar-background {
             background-color: #2F3346;
+        }
+
+        .title-ios { 
+            padding-right: 30xp;
+            padding-left: 30px; 
+            padding-bottom: 30px;
         }
 
 
@@ -112,3 +103,10 @@ ion-header {
 }
 
 //navbar
+.tabbar {
+    height: 56px;
+}
+
+.tab-button-text {
+    font-size: 13px;
+}
