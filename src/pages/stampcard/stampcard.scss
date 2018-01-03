@@ -6,7 +6,7 @@ ion-content {
         .StampcardBackground-img {
             background-image: url('../assets/imgs/sky+line+leeuwarden.jpg');
             background-position: 50%;
-            height: 20rem;
+            height: 18rem;
             background-size: cover;
             border-radius: 10px 10px 0 0;
         }
@@ -82,10 +82,6 @@ ion-slides {
     overflow: unset;
 }
 
-.padding-top {
-    padding: 0;
-}
-
 .border {
     border: 2px solid #111;
     border-radius: 8px;
@@ -156,9 +152,14 @@ ion-slides {
     background-image: url(../assets/imgs/muts.svg);
     width: 100%;
     position: absolute;
-    height: 15vh;
-    top: -7.8vh;
-    left: -3.5vh;
+    height: 12vh;
+    top: -6.2vh;
+    left: -2.7vh;
     z-index: 1;
     background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bar-button-default-md {
+    color: white;
 }
