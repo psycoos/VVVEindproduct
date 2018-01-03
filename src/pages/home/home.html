@@ -10,6 +10,20 @@
 </ion-header>
   
 <ion-content padding>
+  <ion-slides pager (ionSlideDidChange)="slideChanged()" (ionSlideDrag)="slideMoved()">
+    <ion-slide>
+      <h1>Hier zie je hoeveel steden je al hebt afgestempeld</h1>
+      <h1>druk op de stad naar keuze om te starten met stempelen</h1>
+      <h1>Hier kun je navigeren tussen de stempelkaart, de map en de instellingen</h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>Slide 2</h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>Slide 3</h1>
+    </ion-slide>
+  </ion-slides>
+  <button (click)="skip()" id="skip">{{ skipMsg }}</button>
   <ion-grid>
     <ion-row>
       <ion-col class="CitiesColumn" col-6 *ngFor="let city of stampService.stamp" (click)="this.navCtrl.push('StampcardPage')" >

@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild, ElementRef, trigger, transition, style, state, animate, keyframes } from '@angular/core';
+import { NavController, Slides } from 'ionic-angular';
 import { City } from '../../models/stamp-card/stamp-card.model';
 import { Storage } from '@ionic/storage'
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
@@ -11,7 +11,25 @@ import { StampcardPage } from '../stampcard/stampcard';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  animations: [
+
+    trigger('bounce', [
+      state('*', style({
+        transform: 'translateX(0)'
+      })),
+      transition('* => rightSwipe', animate('700ms ease-out', keyframes([
+        style({transform: 'translateX(0)', offset: 0}),
+        style({transform: 'translateX(-65px)', offset: .3}),
+        style({transform: 'translateX(0)', offset: 1})
+      ]))),
+      transition('* => leftSwipe', animate('700ms ease-out', keyframes([
+        style({transform: 'translateX(0)', offset: 0}),
+        style({transform: 'translateX(65px)', offset: .3}),
+        style({transform: 'translateX(0)', offset: 1})
+      ])))
+    ])
+  ]
 })
 export class HomePage {
 
@@ -89,6 +107,29 @@ export class HomePage {
     }
   ] //deze array wordt gebruikt om de stampcard te initialiseren
 
+  @ViewChild(Slides) slides: Slides;
+  skipMsg: string = "Skip";
+  state: string = 'x';
+
+  skip() {
+    this.navCtrl.push(HomePage);
+  }
+
+  slideChanged() {
+    if (this.slides.isEnd())
+      this.skipMsg = "Alright, I got it";
+  }
+
+  slideMoved() {
+    if (this.slides.getActiveIndex() >= this.slides.getPreviousIndex())
+      this.state = 'rightSwipe';
+    else
+      this.state = 'leftSwipe';
+  }
+
+  animationDone() {
+    this.state = 'x';
+  }
 
   constructor(
     public navCtrl: NavController,
@@ -136,4 +177,5 @@ export class HomePage {
   //     }
   //   });
   // }
+  
 }

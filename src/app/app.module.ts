@@ -18,7 +18,7 @@ import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { stampService } from '../providers/stamp-service'
 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -34,6 +34,7 @@ import { stampService } from '../providers/stamp-service'
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    BrowserAnimationsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
