@@ -55,5 +55,67 @@ page-home {
 
     ion-slides {
         position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+        // background-color: white;
+        // opacity: 0.7;
+        ion-slide.swiper-slide {
+            width: 100% !important;
+            .onboarding-text h1 {
+                font-size: $normal;
+                text-align: center;
+            }
+            .onboarding-right {
+                width: 35%;
+                margin-left: auto;
+            }
+            .onboarding-left {
+                width: 65%;
+                margin-right: auto;
+                margin-top: 130px;
+            }
+            .slide-zoom {
+                height: 50%;
+            }
+        }
+        ion-slide.onboarding-slide-1 {
+            background-image: url('../assets/imgs/onboarding-slide-1.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #2F3346;
+        }
+        ion-slide.onboarding-slide-2 {
+            background-image: url('../assets/imgs/onboarding-slide-2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #2F3346;
+        }
+        ion-slide.onboarding-slide-3 {
+            background-image: url('../assets/imgs/onboarding-slide-3-android.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #2F3346;
+        }
+        .swiper-container-horizontal > .swiper-pagination {
+            display: none !important;
+        }
+    }
+    button.button.button-next {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        z-index: 99;
+        background: linear-gradient(0deg, #70B1FB, #10DAFE);
+        right: 10%;
+        position: absolute;
+        top: 50%;
+        color: white;
+        font-size: $normal;
+    }
+    #skip {
+        position: fixed;
+        z-index: 999;
     }
 }

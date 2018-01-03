@@ -130,7 +130,7 @@ export class HomePage {
   animationDone() {
     this.state = 'x';
   }
-
+  
   constructor(
     public navCtrl: NavController,
     public storage: Storage,

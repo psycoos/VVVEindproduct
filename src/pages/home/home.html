@@ -1,3 +1,15 @@
+<ion-slides pager #slides (ionSlideDidChange)="slideChanged()" (ionSlideDrag)="slideMoved()" options="{pagination: false}">
+  <ion-slide class="onboarding-slide-1">
+    <button class="button button-next" (click)="next(slides, 2)"><ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline"></ion-icon></button>
+  </ion-slide>
+  <ion-slide class="onboarding-slide-2">
+    <h1>Slide 2</h1>
+  </ion-slide>
+  <ion-slide class="onboarding-slide-3">
+    <h1>Slide 3</h1>
+  </ion-slide>
+</ion-slides>
+
 <ion-header>
   <ion-navbar>
       <div class="arrow-back">
@@ -10,20 +22,6 @@
 </ion-header>
   
 <ion-content padding>
-  <ion-slides pager (ionSlideDidChange)="slideChanged()" (ionSlideDrag)="slideMoved()">
-    <ion-slide>
-      <h1>Hier zie je hoeveel steden je al hebt afgestempeld</h1>
-      <h1>druk op de stad naar keuze om te starten met stempelen</h1>
-      <h1>Hier kun je navigeren tussen de stempelkaart, de map en de instellingen</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Slide 2</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Slide 3</h1>
-    </ion-slide>
-  </ion-slides>
-  <button (click)="skip()" id="skip">{{ skipMsg }}</button>
   <ion-grid>
     <ion-row>
       <ion-col class="CitiesColumn" col-6 *ngFor="let city of stampService.stamp" (click)="this.navCtrl.push('StampcardPage')" >
@@ -32,10 +30,9 @@
           <img src="assets/imgs/{{city.falseimage}}" *ngIf="city.value === false">          
         </div>
       </ion-col>
-    
-
-        <!-- <button ion-button full (click)="clearStorage()">CLEAR HIM</button> -->
-      </ion-row>
-    </ion-grid>
-  </ion-content>
+      <!-- <button ion-button full (click)="clearStorage()">CLEAR HIM</button> -->
+    </ion-row>
+  </ion-grid>
+  <button (click)="skip()" id="skip">{{ skipMsg }}</button>
+</ion-content>
 
