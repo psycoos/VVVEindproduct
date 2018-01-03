@@ -9,6 +9,8 @@ import { Storage } from '@ionic/storage';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import { stampService } from '../../providers/stamp-service';
+import { NFC, Ndef } from '@ionic-native/nfc';
+import { Subscription } from 'rxjs/Rx';
 
 
 @IonicPage()
@@ -23,6 +25,9 @@ export class StampcardPage {
   tab2Root = HomePage;
   tab3Root = UserPage;
 
+  readingTag:   boolean   = false;
+  subscriptions: Array<Subscription> = new Array<Subscription>();
+
   public stampcarousel = [];
 
   constructor(
@@ -32,6 +37,8 @@ export class StampcardPage {
     private iab: InAppBrowser,
     private barcode: BarcodeScanner,
     private stampService: stampService,
+    private nfc: NFC,
+    private ndef: Ndef
     
   ) {
 
@@ -40,9 +47,22 @@ export class StampcardPage {
     //     this.stampcarousel = kaart; //kaart uit de localstorage
     // });
 
-    
+    this.subscriptions.push(this.nfc.addNdefListener()
+    .subscribe(data => {
+      if (this.readingTag) {
+        let payload = data.tag.ndefMessage[0].payload;
+        let tagContent = this.nfc.bytesToString(payload).substring(3);
+        this.readingTag = false;
+        console.log("De stad is: ", tagContent);
+        
+        this.checkValue(tagContent);
+      }
+      },
+    )
+  );
     
   }
+
   openhim(){
     const browser = this.iab.create('https://www.google.com/maps/dir/?api=1&destination=Leeuwarden&travelmode=walking');
   }
@@ -55,6 +75,12 @@ export class StampcardPage {
       alert(err);
     });
   }
+
+  readTag() {
+    alert("NFC staat aan");
+    this.readingTag = true;
+  }
+
 
 
   //verandert de stempel state van de gescande stad in true
