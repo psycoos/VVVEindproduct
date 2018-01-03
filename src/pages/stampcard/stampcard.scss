@@ -127,3 +127,15 @@ ion-slides {
     position: fixed;
     bottom: 8rem;
 }
+
+.swiper-container {
+    overflow: unset;
+}
+
+.slide-custom.swiper-slide.swiper-slide-prev {
+    opacity: 0.3;
+}
+
+.slide-custom.swiper-slide.swiper-slide-next {
+    opacity: 0.3;
+}
