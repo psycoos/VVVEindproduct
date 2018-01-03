@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SendPage } from '../send/send';
 
 /**
  * Generated class for the UserPage page.
@@ -20,6 +21,10 @@ export class UserPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserPage');
+  }
+
+  pushit(){
+    this.navCtrl.push('SendPage');
   }
 
 }

@@ -1,0 +1,28 @@
+<!--
+  Generated template for the SendPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Send</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <form #form="ngForm" novalidate>
+        <ion-item>
+          <ion-label>Todo</ion-label>
+          <ion-input type="text" required [(ngModel)]="email.body" ngControl="body"></ion-input>
+        </ion-item>
+        <button ion-button type="submit" block>Voeg adres toe</button>
+      </form>
+
+  <button ion-button (click)="sendMail()">verzend mail</button>
+
+</ion-content>

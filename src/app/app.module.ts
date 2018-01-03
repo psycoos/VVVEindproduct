@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { QrCodeProvider } from '../providers/qr-code/qr-code';
 import { MapsPage } from '../pages/maps/maps';
 import { UserPage } from '../pages/user/user';
+import { SendPage } from '../pages/send/send';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
@@ -17,6 +18,8 @@ import { IonicStorageModule } from '@ionic/storage';
 import { NfcScanProvider } from '../providers/nfc-scan/nfc-scan';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { stampService } from '../providers/stamp-service'
+
+import { EmailComposer } from '@ionic-native/email-composer';
 
 
 
@@ -28,7 +31,7 @@ import { stampService } from '../providers/stamp-service'
     HomePage,
     TabsPage,
     MapsPage,
-    UserPage
+    UserPage,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import { stampService } from '../providers/stamp-service'
     // Ndef
     InAppBrowser,
     stampService,
+    EmailComposer
   ]
 })
 export class AppModule {}
