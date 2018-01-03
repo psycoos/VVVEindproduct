@@ -1,0 +1,94 @@
+page-modal-stampcard {
+    .blurry-background {
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background-color: #2F3346;
+        opacity: 0.9;
+    }
+    .icy-background {
+        background-image: url(../assets/imgs/transparant-ijs.png);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .title-stampcard-modal {
+        text-align: center;
+        color: white;
+    }
+    .text-stampcard-modal {
+        text-align: center;
+        color: white;
+        font-size: 18px;
+    }
+    .scroll-content {
+        background-color: transparent;
+    }
+    .content-md {
+        background-color: transparent;
+    }
+    .citystamp-column {
+        display: flex;
+        margin: 60px 0 60px 0;
+    }
+    .citystamp-image {
+        border: 1px solid #70B1FB;
+        border-radius: 15px;
+        margin: auto;
+    }
+    .line {
+        border-bottom: 2px solid white;
+        opacity: 0.3;
+        width: 80%;
+        margin: auto;
+    }
+    .qr-image {
+        width: 15%;
+        padding-right: 5px;
+    }
+    .button-qr {
+        border-radius: 20px;
+        padding: 20px;
+        width: 65%;
+        margin: auto;
+        background-color: #636B86;
+        p {
+            font-size: 9pt;
+            text-transform: none;
+        }
+    }
+    .button-sub {
+        border-radius: 20px;
+        background-color: #636B86;        
+    }
+    .scroll-content {
+        padding: 40px;
+    }
+    .bar-buttons-md {
+        display: flex;
+    }
+    .nfc-title {
+        display: grid;
+        margin: auto;
+    }
+    .bar-buttons.bar-buttons-md {
+        padding-top: 22px;
+    }
+    .bar-buttons p {
+        color: white;
+        padding: 0 9px 0 9px;
+    }
+    .nfc-image {
+        width: 24%;
+        height: 10%;
+        padding: 12px 12px 0 0;
+        margin-bottom: -18px;
+    }
+}

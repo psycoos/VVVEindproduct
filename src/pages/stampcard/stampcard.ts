@@ -10,6 +10,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import { stampService } from '../../providers/stamp-service';
 
+import { ModalController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -29,6 +30,7 @@ export class StampcardPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public storage: Storage,
+    public modalCtrl : ModalController,
     private iab: InAppBrowser,
     private barcode: BarcodeScanner,
     private stampService: stampService,
@@ -74,4 +76,7 @@ export class StampcardPage {
     console.log('ionViewDidLoad StampcardPage');
   }
 
+  public openModal() {
+    var modalStampcardPage = this.modalCtrl.create('ModalStampcardPage'); modalStampcardPage.present();
+  }
 }
