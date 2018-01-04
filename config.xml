@@ -94,4 +94,5 @@
     <plugin name="phonegap-nfc" spec="^0.7.1">
         <variable name="NFC_USAGE_DESCRIPTION" value="Read NFC Tags" />
     </plugin>
+    <allow-navigation href="http://141.252.237.125:8100" />
 </widget>

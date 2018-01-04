@@ -12,7 +12,7 @@
     <div class="line"></div>
     <h1 class="title-stampcard-modal">Geen NFC?</h1>
     <ion-buttons>
-      <button ion-button end class="button-qr"><img class="qr-image" src="assets/imgs/QR-scanner-icon.png"><p>Start QR code scanner</p></button>
+      <button ion-button end class="button-qr" (click)="scan()" [disabled]="buttonDisabled"><img class="qr-image" src="assets/imgs/QR-scanner-icon.png"><p>Start QR code scanner</p></button>
     </ion-buttons>
     <ion-buttons end>
       <button class="button-sub" ion-button (click)="closeModal()">X</button><p>Scherm sluiten</p>

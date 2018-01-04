@@ -56,19 +56,19 @@ export class StampcardPage implements AfterViewInit{
     //     this.stampcarousel = kaart; //kaart uit de localstorage
     // });
 
-    this.subscriptions.push(this.nfc.addNdefListener()
-    .subscribe(data => {
-      if (this.readingTag) {
-        let payload = data.tag.ndefMessage[0].payload;
-        let tagContent = this.nfc.bytesToString(payload).substring(3);
-        this.readingTag = false;
-        console.log("De stad is: ", tagContent);
+  //   this.subscriptions.push(this.nfc.addNdefListener()
+  //   .subscribe(data => {
+  //     if (this.readingTag) {
+  //       let payload = data.tag.ndefMessage[0].payload;
+  //       let tagContent = this.nfc.bytesToString(payload).substring(3);
+  //       this.readingTag = false;
+  //       console.log("De stad is: ", tagContent);
         
-        this.checkValue(tagContent);
-      }
-      },
-    )
-  );
+  //       this.checkValue(tagContent);
+  //     }
+  //     },
+  //   )
+  // );
     
   }
 
