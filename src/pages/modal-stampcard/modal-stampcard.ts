@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ViewController } from 'ionic-angular';
+import { TabsPage } from '../../pages/tabs/tabs';
 
 
 import { Storage } from '@ionic/storage';
@@ -44,6 +45,7 @@ export class ModalStampcardPage implements AfterViewInit{
     private barcode: BarcodeScanner,
     private nfc: NFC,
     private ndef: Ndef
+    
   ) 
   {
     this.subscriptions.push(this.nfc.addNdefListener()
@@ -78,7 +80,6 @@ export class ModalStampcardPage implements AfterViewInit{
 
 
 readTag() {
-  alert("NFC staat aan");
   this.readingTag = true;
 }
 
@@ -93,7 +94,8 @@ checkValue(scanResult) {
         kaart[i].value = true;//set de value
         this.stampService.stamp = kaart;//update stamp
          this.storage.set('stampcard', kaart);//update localstorage zodat deze gelijk is aan curStamp
-         
+         this.navCtrl.setRoot(TabsPage);
+         this.viewCtrl.dismiss();
       }
     }
   });

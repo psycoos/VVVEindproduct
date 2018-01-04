@@ -4,6 +4,7 @@ import { City } from '../../models/stamp-card/stamp-card.model';
 import { Storage } from '@ionic/storage'
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import { stampService } from '../../providers/stamp-service';
+import { AlertController } from 'ionic-angular';
 
 
 
@@ -95,6 +96,7 @@ export class HomePage {
     public storage: Storage,
     private barcode: BarcodeScanner,
     private stampService: stampService,
+    private alertCtrl: AlertController,
   ) {
     //zet de stempelkaart in de array als er nog geen is, update anders curStamp met localstorage
     storage.get('stampcard').then((kaart) => {
@@ -105,6 +107,31 @@ export class HomePage {
       } else  
         stampService.stamp = kaart; //kaart uit de localstorage
     });
+  }
+
+ionViewDidEnter() {
+  this.storage.get('stampcard').then((kaart) => {
+    var count = 0;
+    for (var i = 0; i < kaart.length; i++) {
+      if (kaart[i].value) {
+        count++;
+      }
+      if (count == 1) {
+        this.alertStampcard();
+        break;
+      }
+    }
+    console.log(count);
+  });
+  }
+
+  alertStampcard() {
+    let alert = this.alertCtrl.create({
+      title: 'Gefeliciteerd!',
+      subTitle: 'Je hebt een volle stempelkaart! Ga naar het dichtsbijzijnde VVV kantoor voor je Elfstedentocht kruisje',
+      buttons: ['Oké']
+    });
+    alert.present();
   }
 
   //clear localstorage
