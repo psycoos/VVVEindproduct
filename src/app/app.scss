@@ -113,3 +113,15 @@ ion-header {
 
 //navbar
 //navbar style can be found in src/theme/variables.scss
+
+//modal styling
+ion-modal {
+    padding: 70px 30px 90px 30px;
+    background: rgba(0,0,0,0.5);
+
+    // .scroll-content, ion-content {
+    //     border-radius: 50px;
+    //     background-color: rgb(25, 29, 49);
+    // }
+
+}

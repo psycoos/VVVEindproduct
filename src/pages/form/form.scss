@@ -1,0 +1,78 @@
+page-form {
+    ion-content{
+        button {
+            position: absolute;
+            right: -20px;
+            top:-20px;
+            float: right;
+        }
+        h1 {
+            clear: both;
+            text-align: center;
+            color: $white;
+            font-size: $large;
+        }
+        p {
+            text-align: center;
+            color: $white;
+            font-weight: lighter;
+            font-size: 12px;
+        }
+        form {
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            input {
+                width: 100%;
+                margin: 10px 0;
+                border-radius: 100px;
+                padding: 5px 20px 5px 20px;
+                border: none;
+            }
+
+            input.streetname {
+                width: 60%;
+                float: left;
+
+            }
+            input.housenumber {
+                width: 35%;
+                float: right;
+            }
+
+            input.submit{
+                width: 40%;
+                padding: 10px;
+                font-size: 11px;
+                color: $white;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#70b1fb+0,11dafe+100 */
+                background: #70b1fb; /* Old browsers */
+                background: -moz-linear-gradient(top, #70b1fb 0%, #11dafe 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, #70b1fb 0%,#11dafe 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, #70b1fb 0%,#11dafe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70b1fb', endColorstr='#11dafe',GradientType=0 ); /* IE6-9 */
+            }
+
+            ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color: #B4B4B4;
+                font-weight: lighter;
+                font-size: 11px;
+              }
+              ::-moz-placeholder { /* Firefox 19+ */
+                color: #B4B4B4;
+                font-weight: lighter;
+                font-size: 11px;
+              }
+              :-ms-input-placeholder { /* IE 10+ */
+                color: #B4B4B4;
+                font-weight: lighter;
+                font-size: 11px;
+              }
+              :-moz-placeholder { /* Firefox 18- */
+                color: #B4B4B4;
+                font-weight: lighter;
+                font-size: 11px;
+              }
+        }
+    }
+}
