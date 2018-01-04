@@ -23,6 +23,7 @@ export class HomePage {
       value: false,
       trueimage: "leeuwarden/leeuwarden_2.svg",
       falseimage: "leeuwarden/leeuwarden_1.svg",
+      cityimage: "leeuwarden/leeuwarden_3.jpg",
       mapsURL: "https://www.google.com/maps/dir/?api=1&destination=Leeuwarden&travelmode=walking"
     },
     {
@@ -30,6 +31,7 @@ export class HomePage {
       value: false,
       trueimage: "sneek/sneek_2.svg",
       falseimage: "sneek/sneek_1.svg",
+      cityimage: "sneek/sneek_3.jpg",
       mapsURL: "https://www.google.com/maps/dir/?api=1&destination=Leeuwarden&travelmode=walking"
     },
     {
@@ -37,55 +39,64 @@ export class HomePage {
       value: false,
       trueimage: "ijlst/ijlst_2.svg",
       falseimage: "ijlst/ijlst_1.svg",
+      cityimage: "ijlst/ijlst_3.jpg",
       mapsURL: "https://www.google.com/maps/dir/?api=1&destination=Leeuwarden&travelmode=walking"
     },
     {
       name: "Sloten",
       value: false,
       trueimage: "sloten/sloten_2.svg",
-      falseimage: "sloten/sloten_1.svg"
+      falseimage: "sloten/sloten_1.svg",
+      cityimage: "sloten/sloten_3.jpg",
     },
     {
       name: "Bolsward",
       value: false,
       trueimage: "bolsward/bolsward_2.svg",
-      falseimage: "bolsward/bolsward_1.svg"
+      falseimage: "bolsward/bolsward_1.svg",
+      cityimage: "bolsward/bolsward_3.jpg",
     },
     {
       name: "Dokkum",
       value: false,
       trueimage: "dokkum/dokkum_2.svg",
-      falseimage: "dokkum/dokkum_1.svg"
+      falseimage: "dokkum/dokkum_1.svg",
+      cityimage: "dokkum/dokkum_3.jpg",
     },
     {
       name: "Franeker",
       value: false,
       trueimage: "franeker/franeker_2.svg",
-      falseimage: "franeker/franeker_1.svg"
+      falseimage: "franeker/franeker_1.svg",
+      cityimage: "franeker/franeker_3.jpg",
     },
     {
       name: "Harlingen",
       value: false,
       trueimage: "harlingen/harlingen_2.svg",
-      falseimage: "harlingen/harlingen_1.svg"
+      falseimage: "harlingen/harlingen_1.svg",
+      cityimage: "harlingen/harlingen_3.jpg",
     },
     {
       name: "Hindeloopen",
       value: false,
       trueimage: "hindeloopen/hindeloopen_2.svg",
-      falseimage: "hindeloopen/hindeloopen_1.svg"
+      falseimage: "hindeloopen/hindeloopen_1.svg",
+      cityimage: "hindeloopen/hindeloopen_3.jpg",
     },
     {
       name: "Stavoren",
       value: false,
       trueimage: "stavoren/stavoren_2.svg",
-      falseimage: "stavoren/stavoren_1.svg"
+      falseimage: "stavoren/stavoren_1.svg",
+      cityimage: "stavoren/stavoren_3.jpg",
     },
     {
       name: "Workum",
       value: false,
       trueimage: "workum/workum_2.svg",
-      falseimage: "workum/workum_1.svg"
+      falseimage: "workum/workum_1.svg",
+      cityimage: "workum/workum_3.jpg",
     }
   ] //deze array wordt gebruikt om de stampcard te initialiseren
 

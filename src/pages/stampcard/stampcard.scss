@@ -2,14 +2,20 @@ ion-content {
     ion-row {
         .StampcardColumns {
             text-align: center;
+            padding: 0;
         }
         .StampcardBackground-img {
-            background-image: url('../assets/imgs/sky+line+leeuwarden.jpg');
             background-position: 50%;
             height: 18rem;
             background-size: cover;
             border-radius: 10px 10px 0 0;
         }
+        .stampcard-city-image{
+            width: 100%;
+            border-radius: 0 10px 0 0;
+        }
+        
+
         .StampcardBackground-info {
             background-color:#2F3346;
             border-radius: 0 0 10px 10px;
