@@ -10,9 +10,10 @@
     <ion-slides slidesPerView="1" spaceBetween="-35" loop="true">
       <ion-slide *ngFor="let city of stampService.stamp" class="slide-custom">
         <ion-row class="succes-animation">
-            <div class="slide-knitcap"></div>
-            <div class="succes-state-icon"></div>
-            <ion-col class="StampcardColumns StampcardBackground-img" col-12>
+          <div class="slide-knitcap"></div>
+          <div class="succes-state-icon"></div>
+          <ion-col class="StampcardColumns StampcardBackground-img" col-12>
+            <img class="stampcard-city-image" src="assets/imgs/{{city.cityimage}}" alt="">
           </ion-col>
         </ion-row>
         <ion-row>
