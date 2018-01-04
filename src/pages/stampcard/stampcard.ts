@@ -73,7 +73,7 @@ export class StampcardPage implements AfterViewInit{
   }
 
   openhim(){
-    const browser = this.iab.create('https://www.google.com/maps/dir/?api=1&destination=Leeuwarden&travelmode=walking');
+    const browser = this.iab.create('https://www.google.nl/maps');
   }
 
     scan() {
