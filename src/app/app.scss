@@ -50,9 +50,8 @@ ion-icon {
     }
 }
 
-.icon-ios {
-    height: .2em;
-    width: .2em;
+.icon-ios, .back-button-text-ios {
+    color: $white;
 }
 
 //header
