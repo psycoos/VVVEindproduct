@@ -84,13 +84,17 @@ export class MapsPage {
   }
 
   addMarker (position, map) {
+    var iconBase = 'assets/imgs/';
     new google.maps.Marker({
       position,
       map,
+      icon: iconBase + 'maps_stempelpost.png',
+      scale: 1
     })
   }
 
   createMarker (position, map) {
+    var iconBase = 'assets/imgs/';
     currentLocationMarker = new google.maps.Marker({
       // icon: {
       //   path: google.maps.SymbolPath.CIRCLE,
@@ -98,6 +102,8 @@ export class MapsPage {
       // },
       position,
       map,
+      icon: iconBase + 'maps_schaatser.png',
+      scale: 1
     })
   } 
 
