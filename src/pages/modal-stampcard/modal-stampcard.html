@@ -1,4 +1,54 @@
 <ion-content padding>
+  <div class="icy-background"></div>
+  <div class="blurry-background"></div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <img class="nfc-image" src="assets/imgs/nfc-scanner-icon.png">
+      </ion-col>
+      <ion-col>
+        <div class="nfc-title">
+          <h1 class="title-stampcard-modal">Stempelen</h1>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="text-stampcard-modal">Je kunt nu je stempel behalen door je telefoon op het NFC logo te plaatsen</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="citystamp-column">
+          <img class="citystamp-image" src="assets/imgs/leeuwarden/leeuwarden_1.svg">
+        </div>
+      </ion-col>
+    </ion-row>
+    <div class="line"></div>
+    <ion-row>
+      <ion-col>
+        <h1 class="title-stampcard-modal">Geen NFC?</h1>
+        <ion-buttons>
+          <button ion-button end class="button-qr" (click)="scan()" [disabled]="buttonDisabled"><img class="qr-image" src="assets/imgs/QR-scanner-icon.png"><p>Start QR code scanner</p></button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-buttons>
+          <button class="button-sub" ion-button (click)="closeModal()">X</button><p>Scherm sluiten</p>
+        </ion-buttons>
+      </ion-col>
+      <ion-col>
+        <ion-buttons>
+          <button class="button-sub" ion-button>?</button><p>Help, het werkt niet!</p>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- 
   <div class="column-9">
     <div class="icy-background"></div>
     <div class="blurry-background"></div>
@@ -19,4 +69,4 @@
       <button class="button-sub" ion-button>?</button><p>Help, het werkt niet!</p>
     </ion-buttons>
   </div>
-</ion-content>
+</ion-content> -->

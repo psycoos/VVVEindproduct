@@ -26,7 +26,9 @@ page-modal-stampcard {
     .text-stampcard-modal {
         text-align: center;
         color: white;
-        font-size: 18px;
+        font-size: 1.6rem;
+        width: 100%;
+        margin: auto;
     }
     .scroll-content {
         background-color: transparent;
@@ -36,12 +38,13 @@ page-modal-stampcard {
     }
     .citystamp-column {
         display: flex;
-        margin: 60px 0 60px 0;
+        // margin: 10% 0 10% 0;
     }
     .citystamp-image {
         border: 1px solid #70B1FB;
         border-radius: 15px;
         margin: auto;
+        width: 40%;
     }
     .line {
         border-bottom: 2px solid white;
@@ -89,20 +92,24 @@ page-modal-stampcard {
         display: flex;
     }
     .nfc-title {
-        display: grid;
+        display: flex;
+        width: 100%;
         margin: auto;
+        margin-top: 3vh;
     }
     .bar-buttons.bar-buttons-md {
-        padding-top: 22px;
+        padding-top: 2vh;
     }
     .bar-buttons p {
         color: white;
         padding: 0 9px 0 9px;
+        font-size: 9pt;
+        font-weight: bold;
     }
     .nfc-image {
-        width: 24%;
-        height: 10%;
-        padding: 12px 12px 0 0;
-        margin-bottom: -18px;
+        width: 60%;
+        height: 100%;
+        float: right;
+        padding-right: 1rem;
     }
 }
