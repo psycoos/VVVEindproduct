@@ -112,4 +112,12 @@ page-modal-stampcard {
         float: right;
         padding-right: 1rem;
     }
+    .citystamp-column {
+        padding: 20% 0 20% 0;
+    }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+        .citystamp-column {
+            padding: 0;
+        }
+    }
 }
