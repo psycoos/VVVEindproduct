@@ -170,12 +170,112 @@ ion-slides {
     color: white;
 }
 
-// activatie green border en vinkje voor succesvol behalen stempel van een specifieke stad
+// activatie green border en vinkje voor succesvol behalen stempel van een specifieke stad //
 
-.slide-zoom {
-    border: 3px solid #2DCB3A;
-    border-radius: 14px;
+.succes-animation {
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
 }
+
+.succes-animation:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 2px solid transparent;
+}
+
+.succes-animation:hover:before {
+    animation: animate 1s linear forwards;
+}
+
+@keyframes animate
+{
+    0%
+    {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 10px;
+    }
+    50%
+    {
+    width: 95%;
+    height: 0;
+    border-top-color: #2DCB3A;
+    border-right-color: #2DCB3A;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 10px;
+    }
+    100%
+    {
+    width: 95%;
+    height: 99%;
+    border-top-color: #2DCB3A;
+    border-right-color: #2DCB3A;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 10px;
+    }
+}
+
+.succes-animation:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 6px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 2px solid transparent;
+}
+
+.succes-animation:hover:after {
+    animation: animate-2 1s linear forwards;
+}
+
+@keyframes animate-2
+{
+    0%
+    {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    }
+    50%
+    {
+    width: 95%;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: #2DCB3A;
+    border-left-color: #2DCB3A;
+    border-radius: 10px;
+    }
+    100%
+    {
+    width: 95%;
+    height: 99%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: #2DCB3A;
+    border-left-color: #2DCB3A;
+    border-radius: 10px;
+    }
+}
+
+// einde animatie succes //
 
 .succes-state-icon {
     background-image: url(../assets/imgs/vinkje.png);
