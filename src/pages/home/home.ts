@@ -4,9 +4,7 @@ import { City } from '../../models/stamp-card/stamp-card.model';
 import { Storage } from '@ionic/storage'
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import { stampService } from '../../providers/stamp-service';
-import { AlertController } from 'ionic-angular';
-
-
+import { AlertController, ModalController } from 'ionic-angular';
 
 import { StampcardPage } from '../stampcard/stampcard';
 
@@ -116,6 +114,7 @@ export class HomePage {
     private barcode: BarcodeScanner,
     private stampService: stampService,
     private alertCtrl: AlertController,
+    public modalCtrl : ModalController
   ) {
     //zet de stempelkaart in de array als er nog geen is, update anders curStamp met localstorage
     storage.get('stampcard').then((kaart) => {
@@ -158,6 +157,10 @@ ionViewDidEnter() {
     console.log("CLEAR");
     this.storage.clear();
   }
+
+  public openModal(){
+    var onboardingPage = this.modalCtrl.create('OnboardingPage'); onboardingPage.present();
+  }  
 
   //scan qr-code
   // scan() {
