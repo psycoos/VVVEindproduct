@@ -8,10 +8,11 @@
   <ion-grid class="padding-top" no-bounce>
     <!-- <div class="gradient-left"></div> -->
     <ion-slides slidesPerView="1" spaceBetween="-35" loop="true">
-      <ion-slide *ngFor="let city of stampService.stamp" class="slide-custom succes-animation">
+      <ion-slide *ngFor="let city of stampService.stamp" class="slide-custom">
+        <div class="empty-animation succes-animation"></div>
         <ion-row>
-          <!-- <div class="slide-knitcap"></div> -->
-          <div class="succes-state-icon"></div>
+          <div class="slide-knitcap"></div>
+          <div class="succes-state-icon succes-state-icon-animation"></div>
           <ion-col class="StampcardColumns StampcardBackground-img" col-12>
             <img class="stampcard-city-image" src="assets/imgs/{{city.cityimage}}" alt="">
           </ion-col>
