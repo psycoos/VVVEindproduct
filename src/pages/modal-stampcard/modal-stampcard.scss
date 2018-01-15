@@ -115,7 +115,7 @@ page-modal-stampcard {
     }
     // activatie green border en vinkje voor succesvol behalen stempel van een specifieke stad //
 
-    .top-succes-animation {
+    .border-succes-animation {
         width: 98%;
         height: 50%;
         -webkit-transform: rotate(90deg);
@@ -126,7 +126,7 @@ page-modal-stampcard {
         position: absolute;
     }
 
-    .top-succes-animation:before {
+    .border-succes-animation:before {
         content: '';
         position: absolute;
         top: 0;
@@ -137,8 +137,8 @@ page-modal-stampcard {
         border-radius: 23px 15px 25px 0;
     }
 
-    .top-succes-animation:before {
-        animation: animate-top-side 2s linear forwards;
+    .border-succes-animation:before {
+        animation: animate-top-side 1s linear forwards;
     }
 
     @keyframes animate-top-side {
@@ -171,64 +171,62 @@ page-modal-stampcard {
         }
     }
 
-    .succes-animation:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 0;
-        border: 3px solid #2DCB3A;
-    }
-
-    .succes-animation:after {
-        animation: animate-bottom-left 1s linear forwards;
-    }
-
-    @keyframes animate-bottom-left {
-        0%{
-            width: 0;
-            height: 0;
-            border-top-color: transparent;
-            border-right-color: transparent;
-            border-bottom-color: transparent;
-            border-left-color: transparent;
-            border-radius: 25px 0 26px 15px;
-        }
-        50%{
-            width: 0;
-            height: 100%;
-            border-top-color: transparent;
-            border-right-color: transparent;
-            border-bottom-color: #2DCB3A;
-            border-left-color: #2DCB3A;
-            border-radius: 25px 0 26px 15px;
-        }
-        100%{
-            width: 99%;
-            height: 100%;
-            border-top-color: transparent;
-            border-right-color: transparent;
-            border-bottom-color: #2DCB3A;
-            border-left-color: #2DCB3A;
-            border-radius: 25px 0 27px 15px;
-        }
-    }
-
-
     // Einde animatie succes //
 
     // Animatie stempel animatie op Stampcard in carousel //
 
+    .stamp-succes-animation {
+        background-image: url(../assets/imgs/stamps/leeuwarden.png);
+        width: 75%;
+        position: absolute;
+        height: 100%;
+        top: 3vh;
+        left: 4.5vh;
+        background-repeat: no-repeat;
+        background-size: contain;
+        -webkit-animation-name: stamp-animation;
+        animation-name: stamp-animation;
+        animation-delay: 1s;
+        -webkit-animation-delay: 1s;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        opacity: 0;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+    }
 
-
+    @keyframes stamp-animation {
+        0%{
+            opacity: 0;
+        }
+        10%{
+            opacity:.50;
+            transform-origin: 50% 50%;
+            transform: rotate(-2deg) scale(3);
+            transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+        }
+        70%{
+            opacity:1;
+            transform: rotate(-15deg) scale(1);
+        }
+        90%{
+            opacity:1;
+            transform: rotate(-15deg) scale(1.2);
+        }
+        100%{
+            opacity:1;
+            transform: rotate(-15deg) scale(1);
+        }
+    }
     // Einde Animatie stempel //
 
     // Animatie stempel behaald vinkje op Stampcard in carousel //
 
     .succes-state-icon {
         background-image: url(../assets/imgs/vinkje.png);
-        width: 15%;
+        width: 20%;
         position: absolute;
         height: 5vh;
         top: -2vh;
@@ -238,31 +236,35 @@ page-modal-stampcard {
     }
 
     .succes-state-icon-animation {
-        -webkit-animation-name: pulse;
-        animation-name: pulse;
+        -webkit-animation-name: scale-animation;
+        animation-name: scale-animation;
         animation-delay:1s;
         -webkit-animation-delay:1s;
-        -webkit-animation-duration: 0.5s;
-        animation-duration: 0.5s;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
         opacity: 0;
         -webkit-animation-fill-mode:forwards;
         animation-fill-mode:forwards;
         animation-iteration-count: 1;
     }
 
-    @keyframes pulse{
+    @keyframes scale-animation {
         0%{
-        opacity: 0;
+            opacity: 0;
         }
         10%{
-        opacity:.50;
-        transform-origin: 50% 50%;
-        transform: rotate(-2deg) scale(5);
-        transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+            opacity: 0;
+            transform: scale(0);
+            transition: all .3s;
+        }
+        70% {
+            opacity: 1;
+            transform: scale(1);
+            transition: all .3s;
         }
         100%{
-        opacity:1;
-        transform: rotate(-15deg) scale(1);
+            opacity: 1;
+            transform: scale(0.7);
         }
     }
 
