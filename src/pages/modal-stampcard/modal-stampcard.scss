@@ -37,11 +37,19 @@ page-modal-stampcard {
     .citystamp-column {
         display: flex;
         margin: 60px 0 60px 0;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
     }
     .citystamp-image {
         border: 1px solid #70B1FB;
         border-radius: 15px;
         margin: auto;
+        width: 100%;
+    }
+    .citystamp-image-div {
+        width: 100%;
     }
     .line {
         border-bottom: 2px solid white;
@@ -105,4 +113,153 @@ page-modal-stampcard {
         padding: 12px 12px 0 0;
         margin-bottom: -18px;
     }
+    // activatie green border en vinkje voor succesvol behalen stempel van een specifieke stad //
+
+    .succes-animation {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+    }
+
+    .succes-animation:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border: 3px solid #2DCB3A;
+    }
+
+    .succes-animation:before {
+        animation: animate-top-right 1s linear forwards;
+    }
+
+    @keyframes animate-top-right {
+        0%{
+            width: 0;
+            height: 0;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-radius: 23px 15px 25px 0;
+        }
+        50%{
+            width: 100%;
+            height: 0;
+            border-top-color: #2DCB3A;
+            border-right-color: #2DCB3A;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-radius: 23px 15px 25px 0;
+        }
+        100%{
+            width: 100%;
+            height: 99%;
+            border-top-color: #2DCB3A;
+            border-right-color: #2DCB3A;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-radius: 23px 15px 24px 0;
+        }
+    }
+
+    .succes-animation:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border: 3px solid #2DCB3A;
+    }
+
+    .succes-animation:after {
+        animation: animate-bottom-left 1s linear forwards;
+    }
+
+    @keyframes animate-bottom-left {
+        0%{
+            width: 0;
+            height: 0;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-radius: 25px 0 26px 15px;
+        }
+        50%{
+            width: 0;
+            height: 100%;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: #2DCB3A;
+            border-left-color: #2DCB3A;
+            border-radius: 25px 0 26px 15px;
+        }
+        100%{
+            width: 99%;
+            height: 100%;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: #2DCB3A;
+            border-left-color: #2DCB3A;
+            border-radius: 25px 0 27px 15px;
+        }
+    }
+
+
+    // Einde animatie succes //
+
+    // Animatie stempel animatie op Stampcard in carousel //
+
+
+
+    // Einde Animatie stempel //
+
+    // Animatie stempel behaald vinkje op Stampcard in carousel //
+
+    .succes-state-icon {
+        background-image: url(../assets/imgs/vinkje.png);
+        width: 15%;
+        position: absolute;
+        height: 5vh;
+        top: -2vh;
+        left: 3vh;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .succes-state-icon-animation {
+        -webkit-animation-name: pulse;
+        animation-name: pulse;
+        animation-delay:1s;
+        -webkit-animation-delay:1s;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        opacity: 0;
+        -webkit-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes pulse{
+        0%{
+        opacity: 0;
+        }
+        10%{
+        opacity:.50;
+        transform-origin: 50% 50%;
+        transform: rotate(-2deg) scale(5);
+        transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+        }
+        100%{
+        opacity:1;
+        transform: rotate(-15deg) scale(1);
+        }
+    }
+
+    // Einde Animatie stempel vinkje //
 }

@@ -172,26 +172,26 @@ ion-slides {
 
 // activatie green border en vinkje voor succesvol behalen stempel van een specifieke stad //
 
-.succes-animation {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border-radius: 10px;
-}
+// .swiper-slide-active {
+//     width: 100%;
+//     height: 100%;
+//     position: relative;
+//     border-radius: 10px;
+// }
 
-.succes-animation:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -2px;
-    width: 0;
-    height: 0;
-    border: 2px solid transparent;
-}
+// .swiper-slide-active:before {
+//     content: '';
+//     position: absolute;
+//     top: -2px;
+//     left: 5px;
+//     width: 0;
+//     height: 0;
+//     border: 3px solid transparent;
+// }
 
-.succes-animation:before {
-    animation: animate 1s linear forwards;
-}
+// .swiper-slide-active:before {
+//     animation: animate 1s linear forwards;
+// }
 
 @keyframes animate
 {
@@ -213,7 +213,7 @@ ion-slides {
     border-right-color: #2DCB3A;
     border-bottom-color: transparent;
     border-left-color: transparent;
-    border-radius: 10px;
+    border-radius: 11px;
     }
     100%
     {
@@ -223,23 +223,23 @@ ion-slides {
     border-right-color: #2DCB3A;
     border-bottom-color: transparent;
     border-left-color: transparent;
-    border-radius: 10px;
+    border-radius: 11px;
     }
 }
 
-.succes-animation:after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    right: 14px;
-    width: 0;
-    height: 0;
-    border: 2px solid transparent;
-}
+// .swiper-slide-active:after {
+//     content: '';
+//     position: absolute;
+//     bottom: 1px;
+//     right: 3px;
+//     width: 0;
+//     height: 0;
+//     border: 3px solid transparent;
+// }
 
-.succes-animation:after {
-    animation: animate-2 1s linear forwards;
-}
+// .swiper-slide-active:after {
+//     animation: animate-2 1s linear forwards;
+// }
 
 @keyframes animate-2
 {
