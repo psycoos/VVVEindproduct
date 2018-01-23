@@ -1,16 +1,16 @@
-<!-- <ion-content> -->
-  <ion-slides pager>
-    <ion-slide>
-      <img src="assets/imgs/onboarding/onboarding-1.png"/>
-    </ion-slide>
+<ion-slides pager>
+  <ion-slide>
+    <img src="assets/imgs/onboarding/onboarding-1.png"/>
+  </ion-slide>
 
-    <ion-slide>
-      <img src="assets/imgs/onboarding/onboarding-Android-2.png"/>
-    </ion-slide>
+  <ion-slide>
+    <img src="assets/imgs/onboarding/onboarding-Android-2.png"/>
+  </ion-slide>
 
-    <ion-slide>
-      <img src="assets/imgs/onboarding/onboarding-3.png"/>
-    </ion-slide>
-  </ion-slides>
-  <button (click)="skip()" id="skip">{{ skipMsg }}</button>
-<!-- </ion-content> -->
+  <ion-slide>
+    <img src="assets/imgs/onboarding/onboarding-3.png"/>
+    <!-- <button class="button-sub" ion-button (click)="closeModal()">X</button><p>Scherm sluiten</p> -->
+  </ion-slide>
+</ion-slides>
+<button class="slides-button-prev" ion-button (click)="getPrev()"><ion-icon name="ios-arrow-back"></ion-icon></button>
+<button class="slides-button-next" ion-button (click)="getNext()"><ion-icon name="ios-arrow-forward"></ion-icon></button>
