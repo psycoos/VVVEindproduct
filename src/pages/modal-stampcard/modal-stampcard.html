@@ -12,12 +12,12 @@
 
       <!-- Hier beneden code van Ruerd -->
 
-      <div class="succes-state-icon succes-state-icon-animation"></div>
-      <div class="stamp-succes-animation"></div>
+      <div class="failed-state-icon" [ngClass]="{'succes-state-icon-animation succes-state-icon': imageStamped == true}"></div>
+      <div class="stamp-failed" [ngClass]="{'stamp-succes-animation': imageStamped == true}"></div>
       <div class="citystamp-image-div">
-        <img class="citystamp-image" [ngClass]="{'citystamp-imageStamped': imageStamped == true}" src="assets/imgs/leeuwarden/leeuwarden_1.svg">
+        <img class="citystamp-image" src="assets/imgs/leeuwarden/leeuwarden_1.svg">
       </div>
-      <div class="border-succes-animation"></div>
+      <div class="border-failed-animation" [ngClass]="{'border-succes-animation': imageStamped == true}"></div>
     </div>
     <div class="line"></div>
     <h1 class="title-stampcard-modal">Geen NFC?</h1>
