@@ -25,6 +25,13 @@ page-modal-stampcard {
         color: $white;
     }
 
+    .nfc-image {
+        width: 24%;
+        height: 10%;
+        padding: 12px 12px 0 0;
+        margin-bottom: -18px;
+    }
+
     .text-stampcard-modal {
         text-align: center;
         color: $white;
@@ -122,13 +129,6 @@ page-modal-stampcard {
     .bar-buttons p {
         color: $white;
         padding: 0 9px;
-    }
-
-    .nfc-image {
-        width: 24%;
-        height: 10%;
-        padding: 12px 12px 0 0;
-        margin-bottom: -18px;
     }
 
     // activatie green border en vinkje voor succesvol behalen stempel van een specifieke stad //

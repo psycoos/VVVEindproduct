@@ -9,7 +9,6 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { QrCodeProvider } from '../providers/qr-code/qr-code';
 import { MapsPage } from '../pages/maps/maps';
-import { UserPage } from '../pages/user/user';
 import { OnboardingPage } from '../pages/onboarding/onboarding';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
@@ -30,7 +29,6 @@ import { NFC, Ndef } from '@ionic-native/nfc';
     HomePage,
     TabsPage,
     MapsPage,
-    UserPage,
     OnboardingPage
   ],
   imports: [
@@ -44,7 +42,6 @@ import { NFC, Ndef } from '@ionic-native/nfc';
     HomePage,
     TabsPage,
     MapsPage,
-    UserPage,
     OnboardingPage
   ],
   providers: [
