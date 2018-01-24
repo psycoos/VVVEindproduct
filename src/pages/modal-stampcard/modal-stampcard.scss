@@ -1,120 +1,137 @@
 page-modal-stampcard {
-    .blurry-background {
+    %background-default {
         width: 100%;
         height: 100%;
-        z-index: -1;
         left: 0;
         top: 0;
         position: absolute;
-        background-color: #2F3346;
+    }
+
+    .blurry-background {
+        @extend %background-default;
+        z-index: -1;
+        background-color: $darkgrey;
         opacity: 0.9;
     }
+    
     .icy-background {
         background-image: url(../assets/imgs/transparant-ijs.png);
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        position: absolute;
         background-size: cover;
         background-repeat: no-repeat;
     }
+
     .title-stampcard-modal {
         text-align: center;
-        color: white;
+        color: $white;
     }
-    .text-stampcard-modal {
-        text-align: center;
-        color: white;
-        font-size: 18px;
-    }
-    .scroll-content {
-        background-color: transparent;
-    }
-    .content-md {
-        background-color: transparent;
-    }
-    .citystamp-column {
-        display: flex;
-        margin: 60px 0 60px 0;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-    }
-    .citystamp-image {
-        border: 1px solid #70B1FB;
-        border-radius: 15px;
-        margin: auto;
-        width: 100%;
-    }
-    .citystamp-image-div {
-        width: 100%;
-    }
-    .line {
-        border-bottom: 2px solid white;
-        opacity: 0.3;
-        width: 80%;
-        margin: auto;
-    }
-    .qr-image {
-        width: 15%;
-        padding-right: 5px;
-    }
-    ion-buttons {
-        display: flex;
-    } 
-    .button-qr {
-        border-radius: 20px;
-        padding: 20px;
-        width: 65%;
-        margin: auto;
-        background-color: #636B86;
-        -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-        p {
-            font-size: 9pt;
-            text-transform: none;
-        }
-        
-    }
-    .button-sub {
-        border-radius: 50%;
-        background-color: #636B86;
-        height: 30px;
-        width: 30px;
-        margin-top: 8px;
-        -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    }
-    .bar-buttons-ios[end] {
-        padding: 30px 0 0 20px;
-    }
-    .scroll-content {
-        padding: 40px;
-    }
-    .bar-buttons-md {
-        display: flex;
-    }
-    .nfc-title {
-        display: grid;
-        margin: auto;
-    }
-    .bar-buttons.bar-buttons-md {
-        padding-top: 22px;
-    }
-    .bar-buttons p {
-        color: white;
-        padding: 0 9px 0 9px;
-    }
+
     .nfc-image {
         width: 24%;
         height: 10%;
         padding: 12px 12px 0 0;
         margin-bottom: -18px;
     }
-    // activatie green border en vinkje voor succesvol behalen stempel van een specifieke stad //
 
+    .text-stampcard-modal {
+        text-align: center;
+        color: $white;
+        font-size: 18px;
+    }
+
+    .scroll-content, .contend-md {
+        background-color: transparent;
+    }
+
+    .citystamp-column {
+        display: flex;
+        margin: 60px 0;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+
+    .citystamp-image {
+        border: 1px solid $babyblue;
+        border-radius: 15px;
+        margin: auto;
+        width: 100%;
+    }
+
+    .citystamp-image-div {
+        width: 100%;
+    }
+
+    .line {
+        border-bottom: 2px solid $white;
+        opacity: 0.3;
+        width: 80%;
+        margin: auto;
+    }
+
+    .qr-image {
+        width: 15%;
+        padding-right: 5px;
+    }
+
+    ion-buttons {
+        display: flex;
+    } 
+
+    %buttons-stampcard-modal {
+        -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        background-color: $grey;
+    }
+
+    .button-qr {
+        @extend %buttons-stampcard-modal;
+        border-radius: 20px;
+        padding: 20px;
+        width: 65%;
+        margin: auto;
+
+        p {
+            font-size: 9pt;
+            text-transform: none;
+        }
+    }
+
+    .button-sub {
+        @extend %buttons-stampcard-modal;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        margin-top: 8px;
+    }
+
+    .bar-buttons-ios[end] {
+        padding: 30px 0 0 20px;
+    }
+
+    .scroll-content {
+        padding: 40px;
+    }
+
+    .bar-buttons-md {
+        display: flex;
+    }
+
+    .nfc-title {
+        display: grid;
+        margin: auto;
+    }
+
+    .bar-buttons.bar-buttons-md {
+        padding-top: 22px;
+    }
+
+    .bar-buttons p {
+        color: $white;
+        padding: 0 9px;
+    }
+
+    // activatie green border en vinkje voor succesvol behalen stempel van een specifieke stad //
     .border-succes-animation {
         width: 98%;
         height: 50%;
@@ -126,17 +143,6 @@ page-modal-stampcard {
         position: absolute;
     }
 
-    .platform-ios .border-succes-animation {
-        width: 98%;
-        height: 50%;
-        -webkit-transform: rotate(90deg);
-        transform: rotate(90deg);
-        -webkit-box-reflect: below 0px;
-        right: -45px;
-        bottom: 47px;
-        position: absolute;
-    }
-
     .border-succes-animation:before {
         content: '';
         position: absolute;
@@ -144,7 +150,7 @@ page-modal-stampcard {
         right: 0;
         width: 0;
         height: 0;
-        border: 3px solid #2DCB3A;
+        border: 3px solid $green;
         border-radius: 23px 15px 25px 0;
     }
 
@@ -153,7 +159,7 @@ page-modal-stampcard {
     }
 
     @keyframes animate-top-side {
-        0%{
+        0% {
             width: 0;
             height: 0;
             border-top-color: transparent;
@@ -162,30 +168,29 @@ page-modal-stampcard {
             border-left-color: transparent;
             border-radius: 23px 15px 25px 0;
         }
-        50%{
+
+        50% {
             width: 100%;
             height: 0;
-            border-top-color: #2DCB3A;
+            border-top-color: $green;
             border-right-color: transparent;
             border-bottom-color: transparent;
-            border-left-color: #2DCB3A;
+            border-left-color: $green;
             border-radius: 23px 15px 25px 0;
         }
-        100%{
+
+        100% {
             width: 100%;
             height: 100%;
-            border-top-color: #2DCB3A;
-            border-right-color: #2DCB3A;
+            border-top-color: $green;
+            border-right-color: $green;
             border-bottom-color: transparent;
-            border-left-color: #2DCB3A;
+            border-left-color: $green;
             border-radius: 20px 15px 0 0;
         }
     }
 
-    // Einde animatie succes //
-
     // Animatie stempel animatie op Stampcard in carousel //
-
     .stamp-succes-animation {
         background-image: url(../assets/imgs/stamps/leeuwarden.png);
         width: 75%;
@@ -209,32 +214,34 @@ page-modal-stampcard {
     }
 
     @keyframes stamp-animation {
-        0%{
+        0% {
             opacity: 0;
         }
-        10%{
+
+        10% {
             opacity:.50;
             transform-origin: 50% 50%;
             transform: rotate(-2deg) scale(3);
             transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
         }
-        70%{
+        
+        70% {
             opacity:1;
             transform: rotate(-15deg) scale(1);
         }
-        90%{
+
+        90% {
             opacity:1;
             transform: rotate(-15deg) scale(1.2);
         }
-        100%{
+
+        100% {
             opacity:1;
             transform: rotate(-15deg) scale(1);
         }
     }
-    // Einde Animatie stempel //
 
-    // Animatie stempel behaald vinkje op Stampcard in carousel //
-
+    // Animatie stempel behaald vinkje op Stampcard modal //
     .succes-state-icon {
         background-image: url(../assets/imgs/vinkje.png);
         width: 20%;
@@ -244,6 +251,7 @@ page-modal-stampcard {
         left: 11vh;
         background-repeat: no-repeat;
         background-size: contain;
+        z-index: 1;
     }
 
     .succes-state-icon-animation {
@@ -260,24 +268,41 @@ page-modal-stampcard {
     }
 
     @keyframes scale-animation {
-        0%{
+        0% {
             opacity: 0;
         }
-        10%{
+
+        10% {
             opacity: 0;
             transform: scale(0);
             transition: all .3s;
         }
+
         70% {
             opacity: 1;
             transform: scale(1);
             transition: all .3s;
         }
-        100%{
+
+        100% {
             opacity: 1;
             transform: scale(0.7);
         }
     }
+}
 
-    // Einde Animatie stempel vinkje //
+// iOS green border correct
+.ios {
+    page-modal-stampcard {
+        .border-succes-animation {
+            width: 98%;
+            height: 50%;
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            -webkit-box-reflect: below 0px;
+            right: -45px;
+            bottom: 47px;
+            position: absolute;
+        }
+    }
 }

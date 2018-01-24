@@ -1,23 +1,28 @@
 ion-content {
+
     ion-row {
         .StampcardColumns {
             text-align: center;
             padding: 0;
         }
+
         .StampcardBackground-img {
             background-position: 50%;
             height: 18rem;
             background-size: cover;
             border-radius: 10px 10px 0 0;
         }
+
         .stampcard-city-image{
             width: 100%;
             border-radius: 0 10px 0 0;
         }
+
         .StampcardBackground-info {
-            background-color:#2F3346;
+            background-color: $darkgrey;
             border-radius: 0 0 10px 10px;
         }
+
         .custom-nav-icon {
             padding-bottom: 0.6rem;
             width: 3rem;
@@ -27,7 +32,7 @@ ion-content {
 }
 
 .swiper-pagination-bullet-active {
-    background: #70B1FB !important;
+    background: $babyblue !important;
     width: 17px !important;
     height: 17px !important;
 }
@@ -36,8 +41,9 @@ ion-content {
     width: 12px;
     height: 12px;
     opacity: 1;
-    background: #2F3346;
+    background: $darkgrey;
 }
+
 %gradient {
     width: 9%;
     height: 100%;
@@ -61,7 +67,7 @@ ion-content {
 
 .city-name {
     font-size: $large;
-    color: white;
+    color: $white;
     font-weight: bold;            
 }
 
@@ -87,7 +93,7 @@ ion-slides {
 }
 
 .border {
-    border: 2px solid #111;
+    border: 2px solid $black;
     border-radius: 8px;
     margin-bottom: 3vh; 
 }
@@ -105,16 +111,16 @@ ion-slides {
 
 .button-grey {
     @extend %button;
-    background-color: #575C71;
-    color: white;
+    background-color: $grey;
+    color: $white;
     font-size: 12px;
     padding: 0 1.5rem 0 1.5rem;
 }
 
 .button-blue {
     @extend %button;
-    background: linear-gradient(0deg, #10DAFE, #70B1FB);
-    color: white;
+    background: linear-gradient(0deg, $lightblue, $babyblue);
+    color: $white;
     font-size: $normal;
     font-weight: bold;
     padding: 0 3rem 0 3rem;
@@ -165,5 +171,5 @@ ion-slides {
 }
 
 .bar-button-default-md {
-    color: white;
+    color: $white;
 }
