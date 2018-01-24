@@ -97,7 +97,9 @@ checkValue(scanResult) {
         this.stampService.stamp = kaart;//update stamp
          this.storage.set('stampcard', kaart);//update localstorage zodat deze gelijk is aan curStamp
          setTimeout(4000);
-         this.navCtrl.setRoot(TabsPage);
+         this.navCtrl.setRoot(TabsPage, {
+         duration: 4000
+         });
          this.viewCtrl.dismiss();
       }
     }
