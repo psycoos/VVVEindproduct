@@ -1,0 +1,17 @@
+<ion-slides pager>
+  <ion-slide>
+    <img src="assets/imgs/onboarding/onboarding-1.png"/>
+  </ion-slide>
+
+  <ion-slide>
+    <img src="assets/imgs/onboarding/onboarding-Android-2.png"/>
+    <img class="onboarding-animation" src="assets/imgs/onboarding/onboarding-animatie.gif"/>
+  </ion-slide>
+
+  <ion-slide>
+    <img class="onboarding-3" src="assets/imgs/onboarding/onboarding-3.png"/>
+    <button class="button-close" ion-button (click)="closeModal()">X</button><p>Scherm sluiten</p>
+  </ion-slide>
+</ion-slides>
+<button class="slides-button-prev" ion-button (click)="getPrev()"><ion-icon name="ios-arrow-back"></ion-icon></button>
+<button class="slides-button-next" ion-button (click)="getNext()"><ion-icon name="ios-arrow-forward"></ion-icon></button>
