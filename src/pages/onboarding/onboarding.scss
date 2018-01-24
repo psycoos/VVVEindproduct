@@ -6,8 +6,8 @@ page-onboarding {
     .slide-zoom {
         width: 100%;
     }
-    ion-slide.swiper-slide {
-        width: 100% !important;
+    .onboarding-3 {
+        margin-top: 10%;
     }
     .swiper-pagination-bullet{
         background:white!important;
@@ -15,26 +15,23 @@ page-onboarding {
         height: 17px;   
         width: 17px;
         display: none;
-     }
-     .button.slides-button-prev {
+    }
+    %slides-button {
         position: absolute;
         top: 50%;
-        left: 5%;
         z-index: 9;
         height: 5rem;
         width: 5rem;
         border-radius: 50%;
         background: linear-gradient(0deg, #10DAFE, #70B1FB);
     }
+     .button.slides-button-prev {
+        @extend %slides-button;
+        left: 5%;
+    }
     .button.slides-button-next {
-        position: absolute;
-        top: 50%;
+        @extend %slides-button;
         right: 5%;
-        z-index: 9;
-        height: 5rem;
-        width: 5rem;
-        border-radius: 50%;
-        background: linear-gradient(0deg, #10DAFE, #70B1FB);
     }
     .icon.icon-md.ion-ios-arrow-back, .icon.icon-md.ion-ios-arrow-forward {
         font-size: 3rem;
