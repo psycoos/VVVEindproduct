@@ -96,8 +96,7 @@ checkValue(scanResult) {
         this.imageStamped = true;
         this.stampService.stamp = kaart;//update stamp
          this.storage.set('stampcard', kaart);//update localstorage zodat deze gelijk is aan curStamp
-         this.navCtrl.setRoot(TabsPage);
-         this.viewCtrl.dismiss();
+        this.navCtrl.setRoot(TabsPage)
       }
     }
   });

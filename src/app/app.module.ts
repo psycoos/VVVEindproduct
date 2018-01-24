@@ -58,4 +58,5 @@ import { NFC, Ndef } from '@ionic-native/nfc';
     stampService,
   ]
 })
+
 export class AppModule {}
