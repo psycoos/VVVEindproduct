@@ -20,7 +20,7 @@ page-onboarding {
         position: absolute;
         top: 50%;
         left: 5%;
-        z-index: 999;
+        z-index: 9;
         height: 5rem;
         width: 5rem;
         border-radius: 50%;
@@ -30,7 +30,7 @@ page-onboarding {
         position: absolute;
         top: 50%;
         right: 5%;
-        z-index: 999;
+        z-index: 9;
         height: 5rem;
         width: 5rem;
         border-radius: 50%;
@@ -38,5 +38,16 @@ page-onboarding {
     }
     .icon.icon-md.ion-ios-arrow-back, .icon.icon-md.ion-ios-arrow-forward {
         font-size: 3rem;
+    }
+    .onboarding-animation {
+        position: absolute;
+        top: 27%;
+        left: 30%;
+        width: 40%;
+    }
+    .button-close {
+        position: absolute;
+        top: 10%;
+        right: 5%;
     }
 }
