@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { MapsPage } from '../maps/maps';
 import { HomePage } from '../home/home';
-import { UserPage } from '../user/user';
 
 import { Storage } from '@ionic/storage';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
