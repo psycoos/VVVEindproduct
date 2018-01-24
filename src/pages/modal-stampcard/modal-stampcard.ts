@@ -26,6 +26,7 @@ import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
 export class ModalStampcardPage implements AfterViewInit{
 
   buttonDisabled: boolean;
+  imageStamped: boolean = false;
 
   ngAfterViewInit(): void {
     this.buttonDisabled = false;
@@ -92,6 +93,7 @@ checkValue(scanResult) {
     for (var i in kaart) {
       if (kaart[i].name === scanResult) {//check of de scan overeenkomt met een stad in de stempelkaart
         kaart[i].value = true;//set de value
+        this.imageStamped = true;
         this.stampService.stamp = kaart;//update stamp
          this.storage.set('stampcard', kaart);//update localstorage zodat deze gelijk is aan curStamp
          this.navCtrl.setRoot(TabsPage);

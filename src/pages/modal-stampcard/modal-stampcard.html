@@ -7,7 +7,7 @@
     </div>
     <p class="text-stampcard-modal">Je kunt nu je stempel behalen door je telefoon op het NFC logo te plaatsen</p>
     <div class="citystamp-column">
-      <img class="citystamp-image" src="assets/imgs/leeuwarden/leeuwarden_1.svg">
+      <img class="citystamp-image" [ngClass]="{'citystamp-imageStamped': imageStamped == true}" assets/imgs/leeuwarden/leeuwarden_1.svg">
     </div>
     <div class="line"></div>
     <h1 class="title-stampcard-modal">Geen NFC?</h1>
