@@ -28,10 +28,6 @@ export class OnboardingPage {
     ) {
   }
 
-  public closeModal(){
-    this.viewCtrl.dismiss();
-  }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad OnboardingPage');
   }
