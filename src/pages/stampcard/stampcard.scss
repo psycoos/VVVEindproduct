@@ -170,12 +170,119 @@ ion-slides {
     color: white;
 }
 
-// activatie green border en vinkje voor succesvol behalen stempel van een specifieke stad
+// activatie green border en vinkje voor succesvol behalen stempel van een specifieke stad //
 
-.slide-zoom {
-    border: 3px solid #2DCB3A;
-    border-radius: 14px;
+// .swiper-slide-active {
+//     width: 100%;
+//     height: 100%;
+//     position: relative;
+//     border-radius: 10px;
+// }
+
+// .swiper-slide-active:before {
+//     content: '';
+//     position: absolute;
+//     top: -2px;
+//     left: 5px;
+//     width: 0;
+//     height: 0;
+//     border: 3px solid transparent;
+// }
+
+// .swiper-slide-active:before {
+//     animation: animate 1s linear forwards;
+// }
+
+@keyframes animate
+{
+    0%
+    {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 10px;
+    }
+    50%
+    {
+    width: 95%;
+    height: 0;
+    border-top-color: #2DCB3A;
+    border-right-color: #2DCB3A;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 11px;
+    }
+    100%
+    {
+    width: 95%;
+    height: 99%;
+    border-top-color: #2DCB3A;
+    border-right-color: #2DCB3A;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 11px;
+    }
 }
+
+// .swiper-slide-active:after {
+//     content: '';
+//     position: absolute;
+//     bottom: 1px;
+//     right: 3px;
+//     width: 0;
+//     height: 0;
+//     border: 3px solid transparent;
+// }
+
+// .swiper-slide-active:after {
+//     animation: animate-2 1s linear forwards;
+// }
+
+@keyframes animate-2
+{
+    0%
+    {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    }
+    50%
+    {
+    width: 95%;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: #2DCB3A;
+    border-left-color: #2DCB3A;
+    border-radius: 10px;
+    }
+    100%
+    {
+    width: 95%;
+    height: 99%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: #2DCB3A;
+    border-left-color: #2DCB3A;
+    border-radius: 10px;
+    }
+}
+
+// Einde animatie succes //
+
+// Animatie stempel animatie op Stampcard in carousel //
+
+
+
+// Einde Animatie stempel //
+
+// Animatie stempel behaald vinkje op Stampcard in carousel //
 
 .succes-state-icon {
     background-image: url(../assets/imgs/vinkje.png);
@@ -188,3 +295,34 @@ ion-slides {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.succes-state-icon-animation {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    animation-delay:1s;
+    -webkit-animation-delay:1s;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    opacity: 0;
+    -webkit-animation-fill-mode:forwards;
+     animation-fill-mode:forwards;
+     animation-iteration-count: 1;
+}
+
+@keyframes pulse{
+    0%{
+      opacity: 0;
+    }
+    10%{
+      opacity:.50;
+      transform-origin: 50% 50%;
+      transform: rotate(-2deg) scale(5);
+      transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    }
+    100%{
+      opacity:1;
+      transform: rotate(-15deg) scale(1);
+    }
+  }
+
+  // Einde Animatie stempel vinkje //
