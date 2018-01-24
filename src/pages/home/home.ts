@@ -19,7 +19,7 @@ export class HomePage {
   stampCard = [
     {
       name: "Leeuwarden",
-      value: true,
+      value: false,
       trueimage: "leeuwarden/leeuwarden_2.svg",
       falseimage: "leeuwarden/leeuwarden_1.svg",
       cityimage: "leeuwarden/leeuwarden_3.jpg",
@@ -27,7 +27,7 @@ export class HomePage {
     },
     {
       name: "Sneek",
-      value: true,
+      value: false,
       trueimage: "sneek/sneek_2.svg",
       falseimage: "sneek/sneek_1.svg",
       cityimage: "sneek/sneek_3.jpg",
@@ -35,7 +35,7 @@ export class HomePage {
     },
     {
       name: "IJlst",
-      value: true,
+      value: false,
       trueimage: "ijlst/ijlst_2.svg",
       falseimage: "ijlst/ijlst_1.svg",
       cityimage: "ijlst/ijlst_3.jpg",
@@ -43,7 +43,7 @@ export class HomePage {
     },
     {
       name: "Sloten",
-      value: true,
+      value: false,
       trueimage: "sloten/sloten_2.svg",
       falseimage: "sloten/sloten_1.svg",
       cityimage: "sloten/sloten_3.jpg",
@@ -51,7 +51,7 @@ export class HomePage {
     },
     {
       name: "Bolsward",
-      value: true,
+      value: false,
       trueimage: "bolsward/bolsward_2.svg",
       falseimage: "bolsward/bolsward_1.svg",
       cityimage: "bolsward/bolsward_3.jpg",
@@ -59,7 +59,7 @@ export class HomePage {
     },
     {
       name: "Dokkum",
-      value: true,
+      value: false,
       trueimage: "dokkum/dokkum_2.svg",
       falseimage: "dokkum/dokkum_1.svg",
       cityimage: "dokkum/dokkum_3.jpg",
@@ -67,7 +67,7 @@ export class HomePage {
     },
     {
       name: "Franeker",
-      value: true,
+      value: false,
       trueimage: "franeker/franeker_2.svg",
       falseimage: "franeker/franeker_1.svg",
       cityimage: "franeker/franeker_3.jpg",
@@ -75,7 +75,7 @@ export class HomePage {
     },
     {
       name: "Harlingen",
-      value: true,
+      value: false,
       trueimage: "harlingen/harlingen_2.svg",
       falseimage: "harlingen/harlingen_1.svg",
       cityimage: "harlingen/harlingen_3.jpg",
@@ -83,7 +83,7 @@ export class HomePage {
     },
     {
       name: "Hindeloopen",
-      value: true,
+      value: false,
       trueimage: "hindeloopen/hindeloopen_2.svg",
       falseimage: "hindeloopen/hindeloopen_1.svg",
       cityimage: "hindeloopen/hindeloopen_3.jpg",
@@ -91,7 +91,7 @@ export class HomePage {
     },
     {
       name: "Stavoren",
-      value: true,
+      value: false,
       trueimage: "stavoren/stavoren_2.svg",
       falseimage: "stavoren/stavoren_1.svg",
       cityimage: "stavoren/stavoren_3.jpg",
@@ -99,7 +99,7 @@ export class HomePage {
     },
     {
       name: "Workum",
-      value: true,
+      value: false,
       trueimage: "workum/workum_2.svg",
       falseimage: "workum/workum_1.svg",
       cityimage: "workum/workum_3.jpg",
