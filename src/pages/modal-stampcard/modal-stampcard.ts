@@ -26,7 +26,7 @@ import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
 export class ModalStampcardPage implements AfterViewInit{
 
   buttonDisabled: boolean;
-  imageStamped: boolean = false;
+  imageStamped: boolean = true;
 
   ngAfterViewInit(): void {
     this.buttonDisabled = false;
