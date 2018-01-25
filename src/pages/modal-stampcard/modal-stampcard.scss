@@ -15,6 +15,7 @@ page-modal-stampcard {
     }
     
     .icy-background {
+        @extend %background-default;
         background-image: url(../assets/imgs/transparant-ijs.png);
         background-size: cover;
         background-repeat: no-repeat;

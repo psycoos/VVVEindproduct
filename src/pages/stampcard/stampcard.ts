@@ -30,7 +30,6 @@ export class StampcardPage implements AfterViewInit{
   
   tab1Root = MapsPage;
   tab2Root = HomePage;
-  tab3Root = UserPage;
 
   readingTag:   boolean   = false;
   subscriptions: Array<Subscription> = new Array<Subscription>();
